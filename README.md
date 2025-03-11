@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Versions
 
-Things you may want to cover:
+* Ruby 3.3.6
+* rails 8.0.1
+* postgresql
 
-* Ruby version
+## Additional Gems
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* pgreset
+* Annotate
+* bootstrap 5.2.3
+* bootswatch 5.2.3
+* bootstrap_form 5.2.3
+* sass
