@@ -1,12 +1,20 @@
-# README
 
-## Versions
+# Ruby On Rails Recipe App
+
+## Developer Notes
+
+### To-do
+
+* Fix stylings (maybe update bootstrap?)
+* Add js
+
+### Versions
 
 * Ruby 3.3.6
 * rails 8.0.1
 * postgresql
 
-## Additional Gems
+### Additional Gems
 
 * pgreset
 * Annotate
