@@ -12,12 +12,9 @@
 
 // Aditional stuff from rails-demos-and-deets-2023
 // Custom bootstrap variables must be set or imported *before* bootstrap.
-@import "yeti/variables";
 @import "bootstrap";
-@import "yeti/bootswatch";
- 
 @import "rails_bootstrap_forms";
- 
+
 label.required:after {
   content:" *";
 }

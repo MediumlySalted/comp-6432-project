@@ -18,7 +18,7 @@
 
 * pgreset
 * Annotate
-* bootstrap 5.2.3
-* bootswatch 5.2.3
-* bootstrap_form 5.2.3
+* bootstrap 5.3.3
+* bootswatch 5.3.3
+* bootstrap_form 5.4.0
 * sass

@@ -1,40 +1,268 @@
 <!doctype html>
 <html lang="en">
 
-  <head>
-    <title>Home</title>
-  </head>
+<head>
+  <title>Home</title>
+</head>
 
-  <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">King & Union</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                    <button class="btn btn-light" type="button" onclick="showDrinks()">Drinks</button>
-                    </li>
-                    <li class="nav-item">
-                    <button class="btn btn-light" type="button" onclick="showSyrups()">Syrups</button>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput">
-                    <button class="btn btn-outline-success" type="button" onclick="searchRecipes()" id="searchButton">Search</button>
-                </form>
-            </div>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-body">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Recipes</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                <button class="btn" type="button" onclick="showDrinks()">Drinks</button>
+                </li>
+                <li class="nav-item">
+                <button class="btn" type="button" onclick="showSyrups()">Syrups</button>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput">
+                <button class="btn btn-outline-success" type="button" onclick="searchRecipes()" id="searchButton">Search</button>
+            </form>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <br>
+<br>
 
-    <div class="container">
-      <div class="row row-cols-auto" id="mainContainer">
+<div class="container">
+  <div class="row row-cols-auto" id="mainContainer"><div class="col">
+    <div class="card shadow p-3 mb-4 bg-body rounded" style="width: 24rem;">
+      <div class="card-body" id="recipe0">
+        <h2 class="card-title" style="margin-bottom: .25rem;">Amaretto Sour</h2>
+        <div id="tags0"><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #F1948A; border-color: #F1948A;" onclick="searchRecipes('Sweet')">Sweet</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #F7DC6F; border-color: #F7DC6F;" onclick="searchRecipes('Lemon')">Lemon</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #7DCEA0; border-color: #7DCEA0;" onclick="searchRecipes('Lime')">Lime</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Amaretto')">Amaretto</button></div>
+        <h5 class="card-text">Ingredients</h5>
+        <ul id="ingredients0"><li><p class="card-text">1.5oz Amaretto</p></li><li><p class="card-text">Sweet &amp; Sour Mix</p></li></ul>
+        <h5 class="card-text">Directions</h5>
+        <div id="directions0"><p class="card-text" style="margin: 0; padding: 0;">Build ingredients into a short glass with ice</p><p class="card-text" style="margin: 0; padding: 0;">Garnish with a cherry</p></div>
       </div>
     </div>
+  </div>
+  <div class="col">
+    <div class="card shadow p-3 mb-4 bg-body rounded" style="width: 24rem;">
+      <div class="card-body" id="recipe1">
+        <h2 class="card-title" style="margin-bottom: .25rem;">Black Widow</h2>
+        <div id="tags1"><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #D6F660; border-color: #D6F660;" onclick="searchRecipes('Tart')">Tart</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #F7DC6F; border-color: #F7DC6F;" onclick="searchRecipes('Lemon')">Lemon</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Blackberry')">Blackberry</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Tequila')">Tequila</button></div>
+        <h5 class="card-text">Ingredients</h5>
+        <ul id="ingredients1"><li><p class="card-text">1.5oz Tequila</p></li><li><p class="card-text">1oz Lemon Juice</p></li><li><p class="card-text">0.5oz Blackberry Rosemary</p></li></ul>
+        <h5 class="card-text">Directions</h5>
+        <div id="directions1"><p class="card-text" style="margin: 0; padding: 0;">Shake &amp; Strain into a coupe</p><p class="card-text" style="margin: 0; padding: 0;">Garnish with a dried lemon wheel</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card shadow p-3 mb-4 bg-body rounded" style="width: 24rem;">
+      <div class="card-body" id="recipe2">
+        <h2 class="card-title" style="margin-bottom: .25rem;">Bloody Mary</h2>
+        <div id="tags2"><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Tomato')">Tomato</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Vodka')">Vodka</button></div>
+        <h5 class="card-text">Ingredients</h5>
+        <ul id="ingredients2"><li><p class="card-text">1.5oz Vodka</p></li><li><p class="card-text">Bloody Mary Mix</p></li></ul>
+        <h5 class="card-text">Directions</h5>
+        <div id="directions2"><p class="card-text" style="margin: 0; padding: 0;">Salt rim of a tall glass</p><p class="card-text" style="margin: 0; padding: 0;">Build ingredients over ice</p><p class="card-text" style="margin: 0; padding: 0;">Garnish with 2 olives and a lime wedge</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card shadow p-3 mb-4 bg-body rounded" style="width: 24rem;">
+      <div class="card-body" id="recipe3">
+        <h2 class="card-title" style="margin-bottom: .25rem;">Caipirinha</h2>
+        <div id="tags3"><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #7DCEA0; border-color: #7DCEA0;" onclick="searchRecipes('Lime')">Lime</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Cachaca')">Cachaca</button></div>
+        <h5 class="card-text">Ingredients</h5>
+        <ul id="ingredients3"><li><p class="card-text">2oz Cachaca</p></li><li><p class="card-text">0.5oz Simple Syrup</p></li><li><p class="card-text">4 Lime Wedges</p></li></ul>
+        <h5 class="card-text">Directions</h5>
+        <div id="directions3"><p class="card-text" style="margin: 0; padding: 0;">Pour ingredients into a short glass</p><p class="card-text" style="margin: 0; padding: 0;">Muddle 4 lime wedges in glass</p><p class="card-text" style="margin: 0; padding: 0;">Top with ice and stir</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card shadow p-3 mb-4 bg-body rounded" style="width: 24rem;">
+      <div class="card-body" id="recipe4">
+        <h2 class="card-title" style="margin-bottom: .25rem;">Cosmopolitan</h2>
+        <div id="tags4"><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #F1948A; border-color: #F1948A;" onclick="searchRecipes('Sweet')">Sweet</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #7DCEA0; border-color: #7DCEA0;" onclick="searchRecipes('Lime')">Lime</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Cranberry')">Cranberry</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Vodka')">Vodka</button></div>
+        <h5 class="card-text">Ingredients</h5>
+        <ul id="ingredients4"><li><p class="card-text">1.5oz Vodka</p></li><li><p class="card-text">0.5oz Triple Sec</p></li><li><p class="card-text">0.5oz Lime Juice</p></li><li><p class="card-text">1oz Cranberry Juice</p></li></ul>
+        <h5 class="card-text">Directions</h5>
+      <div id="directions4"><p class="card-text" style="margin: 0; padding: 0;">Shake ingredients and strain in a coupe</p><p class="card-text" style="margin: 0; padding: 0;">Garnish with an orange twist</p></div>
+    </div>
+  </div>
+  </div>
+  <div class="col">
+    <div class="card shadow p-3 mb-4 bg-body rounded" style="width: 24rem;">
+      <div class="card-body" id="recipe5">
+        <h2 class="card-title" style="margin-bottom: .25rem;">Ginger Basil Smash</h2>
+        <div id="tags5"><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #F7DC6F; border-color: #F7DC6F;" onclick="searchRecipes('Lemon')">Lemon</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Ginger')">Ginger</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Bourbon')">Bourbon</button></div>
+        <h5 class="card-text">Ingredients</h5>
+        <ul id="ingredients5"><li><p class="card-text">1.5oz Old Dominic Bourbon</p></li><li><p class="card-text">1oz Lemon Juice</p></li><li><p class="card-text">0.5oz Ginger Simple Syrup</p></li><li><p class="card-text">Club Soda</p></li></ul>
+        <h5 class="card-text">Directions</h5>
+        <div id="directions5"><p class="card-text" style="margin: 0; padding: 0;">Shake with 4 basil leaves</p><p class="card-text" style="margin: 0; padding: 0;">Pour into a tall glass</p><p class="card-text" style="margin: 0; padding: 0;">Top with club soda</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card shadow p-3 mb-4 bg-body rounded" style="width: 24rem;">
+      <div class="card-body" id="recipe6">
+        <h2 class="card-title" style="margin-bottom: .25rem;">Green Tea Shot</h2>
+        <div id="tags6"><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #BDEA61; border-color: #BDEA61;" onclick="searchRecipes('Sour')">Sour</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #F7DC6F; border-color: #F7DC6F;" onclick="searchRecipes('Lemon')">Lemon</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #7DCEA0; border-color: #7DCEA0;" onclick="searchRecipes('Lime')">Lime</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Peach')">Peach</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Whiskey')">Whiskey</button></div>
+        <h5 class="card-text">Ingredients</h5>
+        <ul id="ingredients6"><li><p class="card-text">0.75oz Jameson</p></li><li><p class="card-text">0.75oz Peach Schnapps</p></li><li><p class="card-text">0.75oz Sweet &amp; Sour Mix</p></li></ul>
+        <h5 class="card-text">Directions</h5>
+        <div id="directions6"><p class="card-text" style="margin: 0; padding: 0;">Shake &amp; Strain into a shot glass</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card shadow p-3 mb-4 bg-body rounded" style="width: 24rem;">
+      <div class="card-body" id="recipe7">
+        <h2 class="card-title" style="margin-bottom: .25rem;">Josh's Jam</h2>
+        <div id="tags7"><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('___')">___</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #FFA143; border-color: #FFA143;" onclick="searchRecipes('Orange')">Orange</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Raspberry')">Raspberry</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Gin')">Gin</button></div>
+        <h5 class="card-text">Ingredients</h5>
+        <ul id="ingredients7"><li><p class="card-text">1.5oz Gin</p></li><li><p class="card-text">0.5oz Cappelletti</p></li><li><p class="card-text">1oz Raspberry Simple Syrup</p></li><li><p class="card-text">Dash Orange Juice</p></li></ul>
+        <h5 class="card-text">Directions</h5>
+        <div id="directions7"><p class="card-text" style="margin: 0; padding: 0;">Shake &amp; Strain into a coupe</p><p class="card-text" style="margin: 0; padding: 0;">Garnish with ___</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card shadow p-3 mb-4 bg-body rounded" style="width: 24rem;">
+      <div class="card-body" id="recipe8">
+        <h2 class="card-title" style="margin-bottom: .25rem;">K.U. Clover</h2>
+        <div id="tags8"><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #F6DDCC; border-color: #F6DDCC;" onclick="searchRecipes('Balanced')">Balanced</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #F7DC6F; border-color: #F7DC6F;" onclick="searchRecipes('Lemon')">Lemon</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #A9CCE3; border-color: #A9CCE3;" onclick="searchRecipes('Frothy')">Frothy</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Raspberry')">Raspberry</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Gin')">Gin</button></div>
+        <h5 class="card-text">Ingredients</h5>
+        <ul id="ingredients8"><li><p class="card-text">1.5oz Gin</p></li><li><p class="card-text">0.5oz St. Germain</p></li><li><p class="card-text">1oz Lemon Juice</p></li><li><p class="card-text">1oz Raspberry Simple Syrup</p></li><li><p class="card-text">Egg White</p></li></ul>
+        <h5 class="card-text">Directions</h5>
+        <div id="directions8"><p class="card-text" style="margin: 0; padding: 0;">Dry shake ingredients with egg whites</p><p class="card-text" style="margin: 0; padding: 0;">Wet shake &amp; strain into a coupe</p><p class="card-text" style="margin: 0; padding: 0;">Garnish with ___?</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card shadow p-3 mb-4 bg-body rounded" style="width: 24rem;">
+      <div class="card-body" id="recipe9">
+        <h2 class="card-title" style="margin-bottom: .25rem;">Lemon Drop Martini</h2>
+        <div id="tags9"><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #D6F660; border-color: #D6F660;" onclick="searchRecipes('Tart')">Tart</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #F7DC6F; border-color: #F7DC6F;" onclick="searchRecipes('Lemon')">Lemon</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Vodka')">Vodka</button></div>
+        <h5 class="card-text">Ingredients</h5>
+        <ul id="ingredients9"><li><p class="card-text">1.5oz Vodka</p></li><li><p class="card-text">0.75oz Lemon Juice</p></li><li><p class="card-text">0.75oz Simple Syrup</p></li></ul>
+        <h5 class="card-text">Directions</h5>
+        <div id="directions9"><p class="card-text" style="margin: 0; padding: 0;">Sugar the rim of a coupe</p><p class="card-text" style="margin: 0; padding: 0;">Shake ingredients &amp; Strain</p><p class="card-text" style="margin: 0; padding: 0;">Garnish with a lemon wheel</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card shadow p-3 mb-4 bg-body rounded" style="width: 24rem;">
+      <div class="card-body" id="recipe10">
+        <h2 class="card-title" style="margin-bottom: .25rem;">Margarita</h2>
+        <div id="tags10"><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #BDEA61; border-color: #BDEA61;" onclick="searchRecipes('Sour')">Sour</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #7DCEA0; border-color: #7DCEA0;" onclick="searchRecipes('Lime')">Lime</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Tequila')">Tequila</button></div>
+        <h5 class="card-text">Ingredients</h5>
+        <ul id="ingredients10"><li><p class="card-text">1.5oz Tequila</p></li><li><p class="card-text">0.5oz Triple Sec</p></li><li><p class="card-text">Sweet &amp; Sour Mix</p></li></ul>
+        <h5 class="card-text">Directions</h5>
+        <div id="directions10"><p class="card-text" style="margin: 0; padding: 0;">Salt the rip of a tall glass</p><p class="card-text" style="margin: 0; padding: 0;">Build ingredients and top with Sweet &amp; Sour Mix</p><p class="card-text" style="margin: 0; padding: 0;">Garnish with lime wedge</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card shadow p-3 mb-4 bg-body rounded" style="width: 24rem;">
+      <div class="card-body" id="recipe11">
+        <h2 class="card-title" style="margin-bottom: .25rem;">Oaxacan Old Fashion</h2>
+        <div id="tags11"><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #DFB662; border-color: #DFB662;" onclick="searchRecipes('Spirit Forward')">Spirit Forward</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Mezcal')">Mezcal</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Tequila')">Tequila</button></div>
+        <h5 class="card-text">Ingredients</h5>
+        <ul id="ingredients11"><li><p class="card-text">2oz Campo Bravo Reposado</p></li><li><p class="card-text">0.5oz Mezcal</p></li><li><p class="card-text">0.25oz Simple Syrup</p></li><li><p class="card-text">0.25oz Agave Syrup</p></li><li><p class="card-text">3 drops of orange &amp; chocolate bitters</p></li></ul>
+        <h5 class="card-text">Directions</h5>
+        <div id="directions11"><p class="card-text" style="margin: 0; padding: 0;">Stir ingredients</p><p class="card-text" style="margin: 0; padding: 0;">Pour over a large ice cube in a short glass</p><p class="card-text" style="margin: 0; padding: 0;">Garnish with an orange twist &amp; bitters</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card shadow p-3 mb-4 bg-body rounded" style="width: 24rem;">
+      <div class="card-body" id="recipe12">
+        <h2 class="card-title" style="margin-bottom: .25rem;">Paloma</h2>
+        <div id="tags12"><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('___')">___</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #7DCEA0; border-color: #7DCEA0;" onclick="searchRecipes('Lime')">Lime</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Grapefruit')">Grapefruit</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Tequila')">Tequila</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Mezcal')">Mezcal</button></div>
+        <h5 class="card-text">Ingredients</h5>
+        <ul id="ingredients12"><li><p class="card-text">1.5oz Mezcal</p></li><li><p class="card-text">1oz Grapefruit Juice</p></li><li><p class="card-text">1 Dash of Simple Syrup</p></li><li><p class="card-text">1 Dash of Lime Juice</p></li><li><p class="card-text">Club Soda</p></li></ul>
+        <h5 class="card-text">Directions</h5>
+        <div id="directions12"><p class="card-text" style="margin: 0; padding: 0;">Shake &amp; pour into a tall glass</p><p class="card-text" style="margin: 0; padding: 0;">Top with club soda</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card shadow p-3 mb-4 bg-body rounded" style="width: 24rem;">
+      <div class="card-body" id="recipe13">
+        <h2 class="card-title" style="margin-bottom: .25rem;">Princess Peach</h2>
+        <div id="tags13"><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #F1948A; border-color: #F1948A;" onclick="searchRecipes('Sweet')">Sweet</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #F7DC6F; border-color: #F7DC6F;" onclick="searchRecipes('Lemon')">Lemon</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Peach')">Peach</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Vodka')">Vodka</button></div>
+        <h5 class="card-text">Ingredients</h5>
+        <ul id="ingredients13"><li><p class="card-text">2oz Peach &amp; Orange Blossom Vodka</p></li><li><p class="card-text">0.5oz Peach Schnapps</p></li><li><p class="card-text">1oz Lemon Juice</p></li><li><p class="card-text">0.5 Orange Juice</p></li><li><p class="card-text">0.5 Simple Syrup</p></li><li><p class="card-text">Sprite</p></li></ul>
+        <h5 class="card-text">Directions</h5>
+        <div id="directions13"><p class="card-text" style="margin: 0; padding: 0;">Shake &amp; Pour into a tall glass</p><p class="card-text" style="margin: 0; padding: 0;">Top with sprite</p><p class="card-text" style="margin: 0; padding: 0;">Garnish with a orange wheel half</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card shadow p-3 mb-4 bg-body rounded" style="width: 24rem;">
+      <div class="card-body" id="recipe14">
+        <h2 class="card-title" style="margin-bottom: .25rem;">Sarah Smile</h2>
+        <div id="tags14"><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #DFB662; border-color: #DFB662;" onclick="searchRecipes('Spirit Forward')">Spirit Forward</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Cinnamon')">Cinnamon</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Gin/Bourbon?')">Gin/Bourbon?</button></div>
+        <h5 class="card-text">Ingredients</h5>
+        <ul id="ingredients14"><li><p class="card-text">2oz Old Dominic Gin/Bourbon?</p></li><li><p class="card-text">0.5oz Simple Syrup</p></li><li><p class="card-text">Barspoon of Cinnamon Mix</p></li><li><p class="card-text">Orange Bitters</p></li></ul>
+        <h5 class="card-text">Directions</h5>
+        <div id="directions14"><p class="card-text" style="margin: 0; padding: 0;">Stir and pour in a small glass over a big ice cube</p><p class="card-text" style="margin: 0; padding: 0;">Garnish with an orange twist and bitters</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card shadow p-3 mb-4 bg-body rounded" style="width: 24rem;">
+      <div class="card-body" id="recipe15">
+        <h2 class="card-title" style="margin-bottom: .25rem;">Sazerac</h2>
+        <div id="tags15"><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('___')">___</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Rye')">Rye</button></div>
+        <h5 class="card-text">Ingredients</h5>
+        <ul id="ingredients15"><li><p class="card-text">1.5oz Sazerac Rye</p></li><li><p class="card-text">0.5oz Simple Syrup</p></li><li><p class="card-text">5 Dashes of Paychaud's Bitters</p></li><li><p class="card-text">Absinthe</p></li></ul>
+        <h5 class="card-text">Directions</h5>
+        <div id="directions15"><p class="card-text" style="margin: 0; padding: 0;">Mist glass with Absinthe</p><p class="card-text" style="margin: 0; padding: 0;">Stir ingredients and pour over a big ice cube</p><p class="card-text" style="margin: 0; padding: 0;">Garnish with ___</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card shadow p-3 mb-4 bg-body rounded" style="width: 24rem;">
+      <div class="card-body" id="recipe16">
+        <h2 class="card-title" style="margin-bottom: .25rem;">Smoked Old Fashioned</h2>
+        <div id="tags16"><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #DFB662; border-color: #DFB662;" onclick="searchRecipes('Spirit Forward')">Spirit Forward</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #FFA143; border-color: #FFA143;" onclick="searchRecipes('Orange')">Orange</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Bourbon')">Bourbon</button></div>
+        <h5 class="card-text">Ingredients</h5>
+        <ul id="ingredients16"><li><p class="card-text">2oz Bourbon</p></li><li><p class="card-text">0.5oz Simple Syrup</p></li><li><p class="card-text">4 drops of orange bitters</p></li></ul>
+        <h5 class="card-text">Directions</h5>
+        <div id="directions16"><p class="card-text" style="margin: 0; padding: 0;">Shake the bourbon in a smoked shaker</p><p class="card-text" style="margin: 0; padding: 0;">Add the simple syrup and stir with a big ice cube</p><p class="card-text" style="margin: 0; padding: 0;">Garnish with an orange twist, cherry, and bitters</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card shadow p-3 mb-4 bg-body rounded" style="width: 24rem;">
+      <div class="card-body" id="recipe17">
+        <h2 class="card-title" style="margin-bottom: .25rem;">Sweet Baby K</h2>
+        <div id="tags17"><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #F1948A; border-color: #F1948A;" onclick="searchRecipes('Sweet')">Sweet</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #F7DC6F; border-color: #F7DC6F;" onclick="searchRecipes('Lemon')">Lemon</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Peach')">Peach</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Whiskey')">Whiskey</button></div>
+        <h5 class="card-text">Ingredients</h5>
+        <ul id="ingredients17"><li><p class="card-text">1.5oz Peach Bourbon</p></li><li><p class="card-text">1oz Lemon Juice</p></li><li><p class="card-text">0.5oz Simple Syrup</p></li><li><p class="card-text">Sprite</p></li></ul>
+        <h5 class="card-text">Directions</h5>
+        <div id="directions17"><p class="card-text" style="margin: 0; padding: 0;">Shake with mint &amp; Pour into a tall glass</p><p class="card-text" style="margin: 0; padding: 0;">Top with sprite</p><p class="card-text" style="margin: 0; padding: 0;">Garnish with a lime</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card shadow p-3 mb-4 bg-body rounded" style="width: 24rem;">
+      <div class="card-body" id="recipe18">
+        <h2 class="card-title" style="margin-bottom: .25rem;">Whiskey Sour</h2>
+        <div id="tags18"><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #BDEA61; border-color: #BDEA61;" onclick="searchRecipes('Sour')">Sour</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #F7DC6F; border-color: #F7DC6F;" onclick="searchRecipes('Lemon')">Lemon</button><button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #E5E7E9; border-color: #E5E7E9;" onclick="searchRecipes('Bourbon')">Bourbon</button></div>
+        <h5 class="card-text">Ingredients</h5>
+        <ul id="ingredients18"><li><p class="card-text">1.5oz Old Dominic Bourbon</p></li><li><p class="card-text">1oz Lemon Juice</p></li><li><p class="card-text">0.5oz Simple Syrup</p></li><li><p class="card-text">4 Dashes of Spiced Cherry Bitters</p></li></ul>
+        <h5 class="card-text">Directions</h5>
+        <div id="directions18"><p class="card-text" style="margin: 0; padding: 0;">Add egg whites and dry shake ingredients</p><p class="card-text" style="margin: 0; padding: 0;">Wet shake and strain over a big cube</p><p class="card-text" style="margin: 0; padding: 0;">Garnish with __</p></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-  </body>
+</body>
+
 </html>
