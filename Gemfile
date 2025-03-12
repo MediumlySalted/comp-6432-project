@@ -69,7 +69,7 @@ gem "pgreset", group: %i[development test]
 # Adds comments with model attributes to top of model files and/or routes to top of routes file
 gem "annotate", group: :development
 # Preset CSS styles
-gem "bootstrap", "~> 5.2.3"
+gem "bootstrap", "~> 5.3.3"
 # Cohesive themes using Bootstrap styles
 gem "bootswatch", github: "thomaspark/bootswatch", tag: "v5.2.3"
 # Bootstrap-styled rails form helpers
