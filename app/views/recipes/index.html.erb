@@ -1,11 +1,3 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-  <title>Home</title>
-</head>
-
-<body>
 
 <nav class="navbar navbar-expand-lg bg-body">
     <div class="container-fluid">
@@ -51,14 +43,10 @@
             <% end %>
           </ul>
           <h5 class="card-text">Directions</h5>
-          <div id="directions0"><p class="card-text" style="margin: 0; padding: 0;"><%= recipe.directions %></p></div>
+          <div id="directions0"><p class="card-text" style="margin: 0; padding: 0;"><%= simple_format(recipe.directions) %></p></div>
         </div>
       </div>
     </div>
   <% end %>
 </div>
 </div>
-
-</body>
-
-</html>
