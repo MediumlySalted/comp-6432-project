@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def home
-    render :home
+    render :example
   end
 end

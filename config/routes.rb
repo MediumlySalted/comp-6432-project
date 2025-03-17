@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  root to: redirect("/home")
+  root to: redirect("/recipes")
 
-  get "home", to: "pages#home", as: "home"
+  get "/ex", to: "pages#home"
+
+  get "/recipes", to: "recipes#index", as: "recipes"
 end

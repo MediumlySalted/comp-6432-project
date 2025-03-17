@@ -20,5 +20,5 @@ class Recipe < ApplicationRecord
     dependent: :destroy
   )
 
-  has_many :projects, through: :recipe_tags
+  has_many :tags, through: :recipe_tags
 end

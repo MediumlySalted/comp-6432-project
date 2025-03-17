@@ -5,8 +5,9 @@
 
 ### To-do
 
-* Fix stylings (maybe update bootstrap?)
-* Add js
+* Add button and search functionality
+* Add syrup recipes
+* Add food recipes
 
 ### Versions
 

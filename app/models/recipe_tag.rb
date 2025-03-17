@@ -19,13 +19,13 @@ class RecipeTag < ApplicationRecord
     :recipe,
     class_name: "Recipe",
     foreign_key: "recipe_id",
-    inverse_of: :recipes
+    inverse_of: :recipe_tags
   )
 
   belongs_to(
     :tag,
     class_name: "Tag",
     foreign_key: "tag_id",
-    inverse_of: :tags
+    inverse_of: :recipe_tags
   )
 end

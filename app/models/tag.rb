@@ -18,5 +18,5 @@ class Tag < ApplicationRecord
     dependent: :destroy
   )
 
-  has_many :projects, through: :recipe_tags
+  has_many :recipes, through: :recipe_tags
 end

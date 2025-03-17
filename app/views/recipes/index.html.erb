@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Home</title>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg bg-body">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Recipes</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                <button class="btn" type="button" onclick="showDrinks()">Drinks</button>
+                </li>
+                <li class="nav-item">
+                <button class="btn" type="button" onclick="showSyrups()">Syrups</button>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput">
+                <button class="btn btn-outline-success" type="button" onclick="searchRecipes()" id="searchButton">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<br>
+
+<div class="container">
+<div class="row row-cols-auto" id="mainContainer">
+  <% @recipes.each do | recipe | %>
+    <div class="col">
+      <div class="card shadow p-3 mb-4 bg-body rounded" style="width: 24rem;">
+        <div class="card-body">
+          <h2 class="card-title" style="margin-bottom: .25rem;"><%= recipe.name %></h2>
+          <div>
+            <% recipe.tags.each do | tag | %>
+              <button class="btn btn-light" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: <%= tag.color %>; border-color: <%= tag.color %>"><%= tag.name %></button>
+            <% end %>
+          </div>
+          <h5 class="card-text">Ingredients</h5>
+          <ul>
+            <% recipe.ingredients.each do | ingredient | %>
+              <li><p class="card-text"><%= ingredient %></p></li>
+            <% end %>
+          </ul>
+          <h5 class="card-text">Directions</h5>
+          <div id="directions0"><p class="card-text" style="margin: 0; padding: 0;"><%= recipe.directions %></p></div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>
+
+</body>
+
+</html>
