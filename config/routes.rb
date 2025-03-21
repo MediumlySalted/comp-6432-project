@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   root to: redirect("/recipes")
 
-  get "/ex", to: "pages#home"
+  get "/home", to: "pages#home"
 
   get "/recipes", to: "recipes#index", as: "recipes"
 end

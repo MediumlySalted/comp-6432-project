@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Home</title>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg bg-body">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Recipes</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                <button class="btn" type="button" onclick="showDrinks()">Drinks</button>
+                </li>
+                <li class="nav-item">
+                <button class="btn" type="button" onclick="showSyrups()">Syrups</button>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput">
+                <button class="btn btn-outline-success" type="button" onclick="searchRecipes()" id="searchButton">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<br>
+
+<div class="container">
+  <div class="row row-cols-auto" id="mainContainer">
+    <div class="col mb-4">
+      <div class="card h-100 shadow p-4 bg-body rounded" style="width: 28rem;">
+        <div class="card-body" id="recipe0">
+          <h2 class="card-title" style="margin-bottom: .25rem;">Food Recipes</h2>
+          <div id="directions0">
+            <p class="card-text" style="margin: 0; padding: 0;">Click on this card for some epic food recipes!</p>
+            <p class="card-text" style="margin: 0; padding: 0;">There are recipes ranging from pastas to french fries :)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col mb-4">
+      <div class="card h-100 shadow p-4 bg-body rounded" style="width: 28rem;">
+        <div class="card-body" id="recipe1">
+          <h2 class="card-title" style="margin-bottom: .25rem;">Cocktail Recipes</h2>
+          <div id="directions1">
+            <p class="card-text" style="margin: 0; padding: 0;">Click on this card for some epic cocktail recipes!</p>
+            <p class="card-text" style="margin: 0; padding: 0;">There are recipes ranging from sweet to sour :)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col mb-4">
+      <div class="card h-100 shadow p-4 bg-body rounded" style="width: 28rem;">
+        <div class="card-body" id="recipe1">
+          <h2 class="card-title" style="margin-bottom: .25rem;">Food Ingredient Recipes</h2>
+          <div id="directions1">
+            <p class="card-text" style="margin: 0; padding: 0;">Click on this card for some epic food ingredient recipes!</p>
+            <p class="card-text" style="margin: 0; padding: 0;">Here there are recipes for things like salad dressings :)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col mb-4">
+      <div class="card h-100 shadow p-4 bg-body rounded" style="width: 28rem;">
+        <div class="card-body" id="recipe1">
+          <h2 class="card-title" style="margin-bottom: .25rem;">Cocktail Ingredient Recipes</h2>
+          <div id="directions1">
+            <p class="card-text" style="margin: 0; padding: 0;">Click on this card for some epic cocktail ingredient recipes!</p>
+            <p class="card-text" style="margin: 0; padding: 0;">Here there are recipes for things like cocktail syrups :)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
