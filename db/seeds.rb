@@ -39,10 +39,10 @@ gin = Tag.create!(
   name: 'Gin',
   color: '#E5E7E9'
 )
-# rum = Tag.create!(
-#   name: 'Rum',
-#   color: '#E5E7E9'
-# )
+rum = Tag.create!(
+  name: 'Rum',
+  color: '#E5E7E9'
+)
 
 # Liqueurs
 amaretto = Tag.create!(
@@ -88,11 +88,11 @@ sour = Tag.create!(
 )
 refreshing = Tag.create!(
   name: 'Refreshing',
-  color: '#A3E4D7' # light turquoise, evoking a cool, fresh sensation
+  color: '#A3E4D7'
 )
 fruity = Tag.create!(
   name: 'Fruity',
-  color: '#FFAA99' # soft peach-pink, reminiscent of mixed fruits
+  color: '#FFAA99'
 )
 savory = Tag.create!(
   name: 'Savory',
@@ -116,48 +116,48 @@ orange = Tag.create!(
 # Flavors
 peach = Tag.create!(
   name: 'Peach',
-  color: '#FFC478' # warm peach-orange, mirroring the color of the fruit
+  color: '#FFC478'
 )
 
 raspberry = Tag.create!(
   name: 'Raspberry',
-  color: '#E74C3C' # deep red, reflecting the vividness of raspberries
+  color: '#E74C3C'
 )
 
 cranberry = Tag.create!(
   name: 'Cranberry',
-  color: '#C0392B' # darker red, suited to the tartness of cranberries
+  color: '#C0392B'
 )
 
 grapefruit = Tag.create!(
   name: 'Grapefruit',
-  color: '#F8C471' # light pink-orange, reminiscent of grapefruit flesh
+  color: '#F8C471'
 )
 
 cherry = Tag.create!(
   name: 'Cherry',
-  color: '#B03A2E' # dark cherry red, capturing the rich sweetness
+  color: '#B03A2E'
 )
 
 # Misc
 mint = Tag.create!(
   name: 'Mint',
-  color: '#98FB98' # light mint green, echoing the fresh, cool taste of mint
+  color: '#98FB98'
 )
 
 basil = Tag.create!(
   name: 'Basil',
-  color: '#7DCEA0' # soft green, to reflect the fresh, herbaceous quality of basil
+  color: '#7DCEA0'
 )
 
 nutty = Tag.create!(
   name: 'Nutty',
-  color: '#D5A253' # light brown, representing toasted nuts
+  color: '#D5A253'
 )
 
 cinnamon = Tag.create!(
   name: 'Cinnamon',
-  color: '#A04000' # warm, reddish-brown, resembling ground cinnamon
+  color: '#A04000'
 )
 
 # Texture

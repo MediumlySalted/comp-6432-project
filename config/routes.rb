@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   root to: redirect("/recipes")
 
-  get "/home", to: "pages#home"
+  get "/home", to: "pages#home", as: "home"
 
   get "/recipes", to: "recipes#index", as: "recipes"
   get "/recipes/tags=:tag_id", to: "recipes#tag", as: "recipe_tag"

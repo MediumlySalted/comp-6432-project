@@ -1,11 +1,11 @@
 
 <nav class="navbar navbar-expand-lg bg-body">
     <div class="container-fluid">
-        <%= link_to "Recipe", recipes_path, class: "navbar-brand" %>
+        <%= link_to "Home", home_path, class: "navbar-brand" %>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                 <button class="btn" type="button" onclick="showDrinks()">Drinks</button>
@@ -15,8 +15,8 @@
                 </li>
             </ul>
             <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput">
-                <button class="btn btn-outline-success" type="button" onclick="searchRecipes()" id="searchButton">Search</button>
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="button" onclick="searchRecipes()">Search</button>
             </form>
         </div>
     </div>
@@ -25,15 +25,15 @@
 <br>
 
 <div class="container">
-<div class="row row-cols-auto" id="mainContainer">
+<div class="row row-cols-auto justify-content-center">
   <% @recipes.each do | recipe | %>
     <div class="col mb-4">
-      <div class="card shadow p-4 bg-body rounded h-100" style="width: 24rem;">
+      <div class="card shadow p-4 bg-body rounded h-100 w-100">
         <div class="card-body">
           <h2 class="card-title" style="margin-bottom: .25rem;"><%= recipe.name %></h2>
           <div>
             <% recipe.tags.each do | tag | %>
-              <%= link_to "#{tag.name}", "#{recipe_tag_path(tag.id)}", class: "btn btn-light", style: "--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-bottom: .5rem; margin-right: .25rem; background-color: #{tag.color}; border-color: #{tag.color}" %>
+              <%= link_to "#{tag.name}", "#{recipe_tag_path(tag.id)}", class: "btn-tag", style: "background-color: #{tag.color}; border-color: #{tag.color}" %>
             <% end %>
           </div>
           <h5 class="card-text">Ingredients</h5>
