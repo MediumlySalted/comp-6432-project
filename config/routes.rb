@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   get "/home", to: "pages#home"
 
   get "/recipes", to: "recipes#index", as: "recipes"
+  get "/recipes/tags=:tag_id", to: "recipes#tag", as: "recipe_tag"
 end

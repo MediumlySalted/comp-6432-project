@@ -174,10 +174,10 @@ black_widow = Recipe.create!(
     "1oz Lemon Juice",
     "0.5oz Blackberry Rosemary"
   ],
-  directions: `
+  directions: <<~HEREDOC
     Shake & Strain into a coupe
     Garnish with a dried lemon wheel
-  `
+  HEREDOC
 )
 black_widow.tags << [ tequila, tart, lemon ]
 
@@ -191,11 +191,11 @@ princess_peach = Recipe.create!(
     "0.5oz Simple Syrup",
     "Sprite"
   ],
-  directions: `
+  directions: <<~HEREDOC
     Shake & Pour into a tall glass
     Top with sprite
     Garnish with an orange wheel half
-  `
+  HEREDOC
 )
 princess_peach.tags << [ vodka, sweet, lemon, peach ]
 
@@ -206,9 +206,9 @@ green_tea_shot = Recipe.create!(
     "0.75oz Peach Schnapps",
     "0.75oz Sweet & Sour Mix"
   ],
-  directions: `
+  directions: <<~HEREDOC
     Shake & Strain into a shot glass
-  `
+  HEREDOC
 )
 green_tea_shot.tags << [ whiskey, sour, lemon, lime, peach ]
 
@@ -220,11 +220,11 @@ sweet_baby_k = Recipe.create!(
     "0.5oz Simple Syrup",
     "Sprite"
   ],
-  directions: `
+  directions: <<~HEREDOC
     Shake with mint & Pour into a tall glass
     Top with sprite
     Garnish with a lime
-  `
+  HEREDOC
 )
 sweet_baby_k.tags << [ whiskey, sweet, lemon, mint ]
 
@@ -235,11 +235,11 @@ lemon_drop_martini = Recipe.create!(
     "0.75oz Lemon Juice",
     "0.75oz Simple Syrup"
   ],
-  directions: `
+  directions: <<~HEREDOC
     Sugar the rim of a coupe
     Shake ingredients & Strain
     Garnish with a lemon wheel
-  `
+  HEREDOC
 )
 lemon_drop_martini.tags << [ vodka, tart, lemon ]
 
@@ -251,11 +251,11 @@ margarita = Recipe.create!(
     "0.5oz Triple Sec",
     "Sweet & Sour Mix"
   ],
-  directions: `
+  directions: <<~HEREDOC
     Salt the rim of a tall glass
     Build ingredients and top with Sweet & Sour Mix
     Garnish with lime wedge
-  `
+  HEREDOC
 )
 margarita.tags << [ tequila, sour, lime ]
 
@@ -266,11 +266,11 @@ smoked_old_fashioned = Recipe.create!(
     "0.5oz Simple Syrup",
     "4 drops of orange bitters"
   ],
-  directions: `
+  directions: <<~HEREDOC
     Shake the bourbon in a smoked shaker
     Add the simple syrup and stir with a big ice cube
     Garnish with an orange twist, cherry, and bitters
-  `
+  HEREDOC
 )
 smoked_old_fashioned.tags << [ bourbon, spirit_forward, orange ]
 
@@ -281,11 +281,11 @@ caipirinha = Recipe.create!(
     "0.5oz Simple Syrup",
     "4 Lime Wedges"
   ],
-  directions: `
+  directions: <<~HEREDOC
     Pour ingredients into a short glass
     Muddle 4 lime wedges in glass
     Top with ice and stir
-  `
+  HEREDOC
 )
 caipirinha.tags << [ cachaca, balanced, lime, refreshing ]
 
@@ -297,11 +297,11 @@ ginger_basil_smash = Recipe.create!(
     "0.5oz Ginger Simple Syrup",
     "Club Soda"
   ],
-  directions: `
+  directions: <<~HEREDOC
     Shake with 4 basil leaves
     Pour into a tall glass
     Top with club soda
-  `
+  HEREDOC
 )
 ginger_basil_smash.tags << [ bourbon, balanced, lemon, basil ]
 
@@ -314,11 +314,11 @@ oaxacan_old_fashion = Recipe.create!(
     "0.25oz Agave Syrup",
     "3 drops of orange & chocolate bitters"
   ],
-  directions: `
+  directions: <<~HEREDOC
     Stir ingredients
     Pour over a large ice cube in a short glass
     Garnish with an orange twist & bitters
-  `
+  HEREDOC
 )
 oaxacan_old_fashion.tags << [ tequila, mezcal, spirit_forward, orange ]
 
@@ -330,10 +330,10 @@ joshs_jam = Recipe.create!(
     "1oz Raspberry Simple Syrup",
     "Dash Orange Juice"
   ],
-  directions: `
+  directions: <<~HEREDOC
     Shake & Strain into a coupe
     Garnish with a raspberry or lemon twist
-  `
+  HEREDOC
 )
 joshs_jam.tags << [ gin, sweet, balanced, fruity, orange, raspberry ]
 
@@ -346,11 +346,11 @@ ku_clover = Recipe.create!(
     "1oz Raspberry Simple Syrup",
     "Egg White"
   ],
-  directions: `
+  directions: <<~HEREDOC
     Dry shake ingredients with egg whites
     Wet shake & strain into a coupe
     Garnish with a raspberry or lemon twist
-  `
+  HEREDOC
 )
 ku_clover.tags << [ gin, balanced, lemon, raspberry, frothy ]
 
@@ -363,10 +363,10 @@ paloma = Recipe.create!(
     "1 Dash of Lime Juice",
     "Club Soda"
   ],
-  directions: `
+  directions: <<~HEREDOC
     Shake & pour into a tall glass
     Top with club soda
-  `
+  HEREDOC
 )
 paloma.tags << [ tequila, balanced, refreshing, lime, grapefruit ]
 
@@ -378,10 +378,10 @@ sarah_smile = Recipe.create!(
     "Barspoon of Cinnamon Mix",
     "Orange Bitters"
   ],
-  directions: `
+  directions: <<~HEREDOC
     Stir and pour in a small glass over a big ice cube
     Garnish with an orange twist and bitters
-  `
+  HEREDOC
 )
 sarah_smile.tags << [ bourbon, spirit_forward, orange, cinnamon ]
 
@@ -393,11 +393,11 @@ sazerac = Recipe.create!(
     "5 Dashes of Paychaud's Bitters",
     "Absinthe"
   ],
-  directions: `
+  directions: <<~HEREDOC
     Mist glass with Absinthe
     Stir ingredients and pour over a big ice cube
     Garnish with a lemon twist
-  `
+  HEREDOC
 )
 sazerac.tags << [ rye, spirit_forward, bitters, absinthe ]
 
@@ -409,11 +409,11 @@ whiskey_sour = Recipe.create!(
     "0.5oz Simple Syrup",
     "4 Dashes of Spiced Cherry Bitters"
   ],
-  directions: `
+  directions: <<~HEREDOC
     Add egg whites and dry shake ingredients
     Wet shake and strain over a big cube
     Garnish with a cherry and lemon slice
-  `
+  HEREDOC
 )
 whiskey_sour.tags << [ bourbon, sour, lemon, cherry ]
 
@@ -423,10 +423,10 @@ amaretto_sour = Recipe.create!(
     "1.5oz Amaretto",
     "Sweet & Sour Mix"
   ],
-  directions: `
+  directions: <<~HEREDOC
     Build ingredients into a short glass with ice
     Garnish with a cherry
-  `
+  HEREDOC
 )
 amaretto_sour.tags << [ amaretto, sweet, lemon, lime, nutty ]
 
@@ -436,11 +436,11 @@ bloody_mary = Recipe.create!(
     "1.5oz Vodka",
     "Bloody Mary Mix"
   ],
-  directions: `
+  directions: <<~HEREDOC
     Salt rim of a tall glass
     Build ingredients over ice
     Garnish with 2 olives and a lime wedge
-  `
+  HEREDOC
 )
 bloody_mary.tags << [ vodka, savory ] # Add tomato
 
@@ -452,9 +452,9 @@ cosmopolitan = Recipe.create!(
     "0.5oz Lime Juice",
     "1oz Cranberry Juice"
   ],
-  directions: `
+  directions: <<~HEREDOC
     Shake ingredients and strain in a coupe
     Garnish with an orange twist
-  `
+  HEREDOC
 )
 cosmopolitan.tags << [ vodka, sweet, lime, cranberry ]
