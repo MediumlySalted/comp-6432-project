@@ -19,4 +19,17 @@ class Tag < ApplicationRecord
   )
 
   has_many :recipes, through: :recipe_tags
+
+  validates :name, presence: true
+  validates :color, presence: true
+
+  validate :validate_color_format
+
+  private
+
+  def validate_color_format
+    unless color.match?(/\A#(?:[0-9a-fA-F]{3}){1,2}\z/)
+      errors.add(:color, "Tag color must be in the valid hexcode format (e.g. #054FCA)")
+    end
+  end
 end

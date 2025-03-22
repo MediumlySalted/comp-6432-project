@@ -4,7 +4,7 @@
 #
 #  id          :integer          not null, primary key
 #  name        :string
-#  type        :string
+#  recipe_type :string
 #  ingredients :string           is an Array
 #  directions  :text
 #  created_at  :datetime         not null

@@ -9,7 +9,7 @@
 #   end
 
 
-## TAGS ##
+## COCKTAIL TAGS ##
 # Spirits
 vodka = Tag.create!(
   name: 'Vodka',
@@ -166,9 +166,10 @@ frothy = Tag.create!(
   color: '#A9CCE3'
 )
 
-## RECIPES ##
+## COCKTAIL RECIPES ##
 black_widow = Recipe.create!(
   name: 'Black Widow',
+  recipe_type: :cocktail,
   ingredients: [
     "1.5oz Tequila",
     "1oz Lemon Juice",
@@ -183,6 +184,7 @@ black_widow.tags << [ tequila, tart, lemon ]
 
 princess_peach = Recipe.create!(
   name: 'Princess Peach',
+  recipe_type: :cocktail,
   ingredients: [
     "2oz Peach & Orange Blossom Vodka",
     "0.5oz Peach Schnapps",
@@ -201,6 +203,7 @@ princess_peach.tags << [ vodka, sweet, lemon, peach ]
 
 green_tea_shot = Recipe.create!(
   name: 'Green Tea Shot',
+  recipe_type: :cocktail,
   ingredients: [
     "0.75oz Jameson",
     "0.75oz Peach Schnapps",
@@ -214,6 +217,7 @@ green_tea_shot.tags << [ whiskey, sour, lemon, lime, peach ]
 
 sweet_baby_k = Recipe.create!(
   name: 'Sweet Baby K',
+  recipe_type: :cocktail,
   ingredients: [
     "1.5oz Peach Bourbon",
     "1oz Lemon Juice",
@@ -230,6 +234,7 @@ sweet_baby_k.tags << [ whiskey, sweet, lemon, mint ]
 
 lemon_drop_martini = Recipe.create!(
   name: 'Lemon Drop Martini',
+  recipe_type: :cocktail,
   ingredients: [
     "1.5oz Vodka",
     "0.75oz Lemon Juice",
@@ -245,6 +250,7 @@ lemon_drop_martini.tags << [ vodka, tart, lemon ]
 
 margarita = Recipe.create!(
   name: 'Margarita',
+  recipe_type: :cocktail,
   ingredients: [
     "1.5oz Tequila",
     "1oz Lime Juice",
@@ -261,6 +267,7 @@ margarita.tags << [ tequila, sour, lime ]
 
 smoked_old_fashioned = Recipe.create!(
   name: 'Smoked Old Fashioned',
+  recipe_type: :cocktail,
   ingredients: [
     "2oz Bourbon",
     "0.5oz Simple Syrup",
@@ -276,6 +283,7 @@ smoked_old_fashioned.tags << [ bourbon, spirit_forward, orange ]
 
 caipirinha = Recipe.create!(
   name: 'Caipirinha',
+  recipe_type: :cocktail,
   ingredients: [
     "2oz Cachaca",
     "0.5oz Simple Syrup",
@@ -291,6 +299,7 @@ caipirinha.tags << [ cachaca, balanced, lime, refreshing ]
 
 ginger_basil_smash = Recipe.create!(
   name: 'Ginger Basil Smash',
+  recipe_type: :cocktail,
   ingredients: [
     "1.5oz Old Dominic Bourbon",
     "1oz Lemon Juice",
@@ -307,6 +316,7 @@ ginger_basil_smash.tags << [ bourbon, balanced, lemon, basil ]
 
 oaxacan_old_fashion = Recipe.create!(
   name: 'Oaxacan Old Fashion',
+  recipe_type: :cocktail,
   ingredients: [
     "2oz Campo Bravo Reposado",
     "0.5oz Mezcal",
@@ -324,6 +334,7 @@ oaxacan_old_fashion.tags << [ tequila, mezcal, spirit_forward, orange ]
 
 joshs_jam = Recipe.create!(
   name: 'Josh\'s Jam',
+  recipe_type: :cocktail,
   ingredients: [
     "1.5oz Gin",
     "0.5oz Cappelletti",
@@ -339,6 +350,7 @@ joshs_jam.tags << [ gin, sweet, balanced, fruity, orange, raspberry ]
 
 ku_clover = Recipe.create!(
   name: 'K.U. Clover',
+  recipe_type: :cocktail,
   ingredients: [
     "1.5oz Gin",
     "0.5oz St. Germain",
@@ -356,6 +368,7 @@ ku_clover.tags << [ gin, balanced, lemon, raspberry, frothy ]
 
 paloma = Recipe.create!(
   name: 'Paloma',
+  recipe_type: :cocktail,
   ingredients: [
     "1.5oz Mezcal",
     "1oz Grapefruit Juice",
@@ -372,6 +385,7 @@ paloma.tags << [ tequila, balanced, refreshing, lime, grapefruit ]
 
 sarah_smile = Recipe.create!(
   name: 'Sarah Smile',
+  recipe_type: :cocktail,
   ingredients: [
     "2oz Old Dominic Bourbon?",
     "0.5oz Simple Syrup",
@@ -387,6 +401,7 @@ sarah_smile.tags << [ bourbon, spirit_forward, orange, cinnamon ]
 
 sazerac = Recipe.create!(
   name: 'Sazerac',
+  recipe_type: :cocktail,
   ingredients: [
     "1.5oz Sazerac Rye",
     "0.5oz Simple Syrup",
@@ -403,6 +418,7 @@ sazerac.tags << [ rye, spirit_forward, bitters, absinthe ]
 
 whiskey_sour = Recipe.create!(
   name: 'Whiskey Sour',
+  recipe_type: :cocktail,
   ingredients: [
     "1.5oz Old Dominic Bourbon",
     "1oz Lemon Juice",
@@ -419,6 +435,7 @@ whiskey_sour.tags << [ bourbon, sour, lemon, cherry ]
 
 amaretto_sour = Recipe.create!(
   name: 'Amaretto Sour',
+  recipe_type: :cocktail,
   ingredients: [
     "1.5oz Amaretto",
     "Sweet & Sour Mix"
@@ -432,6 +449,7 @@ amaretto_sour.tags << [ amaretto, sweet, lemon, lime, nutty ]
 
 bloody_mary = Recipe.create!(
   name: 'Bloody Mary',
+  recipe_type: :cocktail,
   ingredients: [
     "1.5oz Vodka",
     "Bloody Mary Mix"
@@ -446,6 +464,7 @@ bloody_mary.tags << [ vodka, savory ] # Add tomato
 
 cosmopolitan = Recipe.create!(
   name: 'Cosmopolitan',
+  recipe_type: :cocktail,
   ingredients: [
     "1.5oz Vodka",
     "0.5oz Triple Sec",
