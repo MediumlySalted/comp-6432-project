@@ -1,11 +1,15 @@
 class RecipesController < ApplicationController
   def index
     @recipes = Recipe.cocktail.order(:name)
-    render :index
-  end
 
-  def tag
-    @recipes = Recipe.cocktail.joins(:tags).where("tags.id = ?", params[:tag_id]).order(:name)
-    render :index
+    # Filters recipes to require all tags queryied
+    if params[:tag_ids].present?
+      tag_ids = params[:tag_ids].split(",").map(&:to_i)
+      @recipes = @recipes
+        .joins(:tags)
+        .where(tags: { id: tag_ids })
+        .group("recipes.id")
+        .having("COUNT(tags.id) = ?", tag_ids.size)
+    end
   end
 end

@@ -19,53 +19,6 @@ label.required:after {
   content:" *";
 }
 
-main {
-    margin-top: 1rem;
-}
-
-.button_to {
-  display: inline;
-}
-
-.btn-tag {
-  @extend .btn;
-  padding: .05rem .4rem;
-  font-size: .75rem;
-  margin-left: -0.35rem;
-  margin-right: .4rem;
-  margin-bottom: .5rem;
-}
-.btn-tag:hover {
-  transition: transform 0.1s ease;
-  transform: scale(1.15);
-}
-
-// Home page buttons
-.card-btn {
-  transition: transform 0.2s ease;
-  text-decoration: none;
-  border-color: #cccccc;
-}
-.card-btn:hover {
-  transition: transform 0.1s ease;
-  transform: scale(1.05);
-  border-color: #242424;
-}
-.card-btn .card {
-  transition: inherit;
-  border-color: inherit;
-}
-.card-btn:hover .card {
-  transform: inherit;
-  border-color: inherit;
-}
-
-.card:hover {
-  transition: transform 0.2s ease;
-  transform: scale(1.015);
-  border-color: #242424;
-}
-
 // SCREEN MARGIN CUSTOMIZATION
 // Default for extra small screens (phones)
 .container {
@@ -88,4 +41,48 @@ main {
   .container {
     max-width: 80%;
   }
+}
+
+main {
+  margin-top: 1rem;
+}
+
+// Home page
+.card-btn {
+  transition: transform 0.2s ease;
+  text-decoration: none;
+  border-color: #cccccc;
+}
+.card-btn:hover {
+  transition: transform 0.1s ease;
+  transform: scale(1.05);
+  border-color: #242424;
+}
+.card-btn .card {
+  transition: inherit;
+  border-color: inherit;
+}
+.card-btn:hover .card {
+  transform: inherit;
+  border-color: inherit;
+}
+
+// Index page
+.btn-tag {
+  @extend .btn;
+  padding: .05rem .4rem;
+  font-size: .75rem;
+  margin-left: -0.35rem;
+  margin-right: .4rem;
+  margin-bottom: .5rem;
+}
+.btn-tag:hover {
+  transition: transform 0.1s ease;
+  transform: scale(1.15);
+}
+
+.card:hover {
+  transition: transform 0.2s ease;
+  transform: scale(1.015);
+  border-color: #242424;
 }

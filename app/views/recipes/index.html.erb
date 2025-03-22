@@ -8,10 +8,10 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                <button class="btn">Drinks</button>
+                <button class="btn">Example</button>
                 </li>
                 <li class="nav-item">
-                <button class="btn">Syrups</button>
+                <button class="btn">Example</button>
                 </li>
             </ul>
             <form class="d-flex" role="search">
@@ -33,7 +33,7 @@
           <h2 class="card-title" style="margin-bottom: .25rem;"><%= recipe.name %></h2>
           <div>
             <% recipe.tags.each do | tag | %>
-              <%= link_to "#{tag.name}", "#{recipe_tag_path(tag.id)}", class: "btn-tag", style: "background-color: #{tag.color}; border-color: #{tag.color}" %>
+              <%= link_to "#{tag.name}", "#{recipes_path(toggle_tag_in_params(tag.id))}", class: "btn-tag", style: "background-color: #{tag.color}; border-color: #{tag.color}" %>
             <% end %>
           </div>
           <h5 class="card-text">Ingredients</h5>
