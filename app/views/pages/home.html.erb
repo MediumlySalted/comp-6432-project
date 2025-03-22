@@ -10,21 +10,15 @@
 <nav class="navbar navbar-expand-lg bg-body">
     <div class="container-fluid">
         <%= link_to "Recipes", recipes_path, class: "navbar-brand" %>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                <button class="btn" type="button" onclick="showDrinks()">Drinks</button>
-                </li>
-                <li class="nav-item">
-                <button class="btn" type="button" onclick="showSyrups()">Syrups</button>
-                </li>
+                <li class="nav-item"><button class="btn">Drinks</button></li>
+                <li class="nav-item"><button class="btn">Syrups</button></li>
             </ul>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="button" onclick="searchRecipes()">Search</button>
+                <button class="btn btn-outline-success">Search</button>
             </form>
         </div>
     </div>
@@ -36,7 +30,7 @@
   <div class="row row-cols-auto justify-content-center">
     <div class="col mb-4">
     <%= link_to recipes_path, class: 'card-btn' do %>
-      <div class="card h-100 shadow p-4 bg-body rounded" style="width: 24rem;">
+      <div class="card shadow p-4 bg-body rounded h-100" style="width: 24rem;">
         <div class="card-body">
           <h2 class="card-title fs-2" style="margin-bottom: .25rem;">Food Recipes</h2>
           <div>
@@ -48,7 +42,7 @@
     </div>
     <div class="col mb-4">
     <%= link_to recipes_path, class: 'card-btn' do %>
-      <div class="card h-100 shadow p-4 bg-body rounded" style="width: 24rem;">
+      <div class="card shadow p-4 bg-body rounded h-100" style="width: 24rem;">
         <div class="card-body">
           <h2 class="card-title fs-2" style="margin-bottom: .25rem;">Cocktail Recipes</h2>
           <div>
@@ -60,7 +54,7 @@
     </div>
     <div class="col mb-4">
     <%= link_to recipes_path, class: 'card-btn' do %>
-      <div class="card h-100 shadow p-4 bg-body rounded" style="width: 24rem;">
+      <div class="card shadow p-4 bg-body rounded h-100" style="width: 24rem;">
         <div class="card-body">
           <h2 class="card-title fs-2" style="margin-bottom: .25rem;">Food Ingredient Recipes</h2>
           <div>
@@ -72,7 +66,7 @@
     </div>
     <div class="col mb-4">
     <%= link_to recipes_path, class: 'card-btn' do %>
-      <div class="card h-100 shadow p-4 bg-body rounded" style="width: 24rem;">
+      <div class="card shadow p-4 bg-body rounded h-100" style="width: 24rem;">
         <div class="card-body">
           <h2 class="card-title fs-2" style="margin-bottom: .25rem;">Cocktail Ingredient Recipes</h2>
           <div>

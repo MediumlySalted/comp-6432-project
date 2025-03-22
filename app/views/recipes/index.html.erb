@@ -2,21 +2,21 @@
 <nav class="navbar navbar-expand-lg bg-body">
     <div class="container-fluid">
         <%= link_to "Home", home_path, class: "navbar-brand" %>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                <button class="btn" type="button" onclick="showDrinks()">Drinks</button>
+                <button class="btn">Drinks</button>
                 </li>
                 <li class="nav-item">
-                <button class="btn" type="button" onclick="showSyrups()">Syrups</button>
+                <button class="btn">Syrups</button>
                 </li>
             </ul>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="button" onclick="searchRecipes()">Search</button>
+                <button class="btn btn-outline-success">Search</button>
             </form>
         </div>
     </div>
@@ -25,7 +25,7 @@
 <br>
 
 <div class="container">
-<div class="row row-cols-auto justify-content-center">
+  <div class="row row-cols-auto justify-content-center">
   <% @recipes.each do | recipe | %>
     <div class="col mb-4">
       <div class="card shadow p-4 bg-body rounded h-100 w-100">
@@ -53,5 +53,5 @@
       </div>
     </div>
   <% end %>
-</div>
+  </div>
 </div>

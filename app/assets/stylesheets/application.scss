@@ -35,6 +35,10 @@ main {
   margin-right: .4rem;
   margin-bottom: .5rem;
 }
+.btn-tag:hover {
+  transition: transform 0.1s ease;
+  transform: scale(1.15);
+}
 
 // Home page buttons
 .card-btn {
@@ -54,6 +58,12 @@ main {
 .card-btn:hover .card {
   transform: inherit;
   border-color: inherit;
+}
+
+.card:hover {
+  transition: transform 0.2s ease;
+  transform: scale(1.015);
+  border-color: #242424;
 }
 
 // SCREEN MARGIN CUSTOMIZATION
