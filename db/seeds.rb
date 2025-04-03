@@ -8,6 +8,11 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+# Users
+User.create!(
+  email: 'admin@email.com',
+  password: '123admin321!'
+)
 
 ## COCKTAIL TAGS ##
 # Spirits
