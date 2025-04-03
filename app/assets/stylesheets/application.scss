@@ -47,6 +47,20 @@ main {
   margin-top: 1rem;
 }
 
+// Nav Bar
+.btn-nav {
+  @extend .btn;
+  transition: transform 0.2s ease;
+  border-color: #575757;
+  font-size: 18px;
+  padding: 0.25rem 0.5rem;
+}
+.btn-nav:hover {
+  transform: scale(1.05);
+  background-color: #dddddd;
+  border-color: #242424;
+}
+
 // Home page
 .card-btn {
   transition: transform 0.2s ease;
@@ -68,21 +82,40 @@ main {
 }
 
 // Index page
+// Cards
+.card {
+  transition: transform 0.2s ease;
+}
+.card:hover {
+  transform: scale(1.015);
+  border-color: #242424;
+}
+
+// Tags
 .btn-tag {
   @extend .btn;
-  padding: .05rem .4rem;
+  transition: transform 0.1s ease;
   font-size: .75rem;
+  padding: .05rem .4rem;
   margin-left: -0.35rem;
   margin-right: .4rem;
   margin-bottom: .5rem;
 }
 .btn-tag:hover {
-  transition: transform 0.1s ease;
   transform: scale(1.15);
 }
 
-.card:hover {
+// Navbar Filter Button Tags
+.btn-filter {
+  @extend .btn;
   transition: transform 0.2s ease;
-  transform: scale(1.015);
-  border-color: #242424;
+  font-size: 16px;
+  padding: 0.25rem 0.5rem;
+  margin-right: 0.25rem;
+}
+.btn-filter:hover {
+  transform: scale(0.9);
+  color: #c21700 !important;
+  border-color: #c21700 !important; 
+  border-width: 1px !important;
 }
