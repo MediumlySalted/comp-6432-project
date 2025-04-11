@@ -8,6 +8,19 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+# Helper functions
+def recipe_tags(recipe, tag_names, tags)
+  tag_names.each do |name|
+    tag = tags[normalize_key(name)]
+    raise "Missing tag: #{name}" unless tag
+    recipe.tags << tag
+  end
+end
+
+def normalize_key(name)
+  name.downcase.gsub(/\s+/, "_").to_sym
+end
+
 # Users
 User.create!(
   email: 'admin@email.com',
@@ -15,161 +28,80 @@ User.create!(
 )
 
 ## COCKTAIL TAGS ##
-# Spirits
-vodka = Tag.create!(
-  name: 'Vodka',
-  color: '#E5E7E9'
-)
-tequila = Tag.create!(
-  name: 'Tequila',
-  color: '#E5E7E9'
-)
-mezcal = Tag.create!(
-  name: 'Mezcal',
-  color: '#E5E7E9'
-)
-whiskey = Tag.create!(
-  name: 'Whiskey',
-  color: '#E5E7E9'
-)
-bourbon = Tag.create!(
-  name: 'Bourbon',
-  color: '#E5E7E9'
-)
-rye = Tag.create!(
-  name: 'Rye',
-  color: '#E5E7E9'
-)
-gin = Tag.create!(
-  name: 'Gin',
-  color: '#E5E7E9'
-)
-rum = Tag.create!(
-  name: 'Rum',
-  color: '#E5E7E9'
-)
+tags = {}
 
-# Liqueurs
-amaretto = Tag.create!(
-  name: 'Amaretto',
-  color: '#E5E7E9'
-)
-cachaca = Tag.create!(
-  name: 'Cachaca',
-  color: '#E5E7E9'
-)
+# Spirits
+spirits = %w[Vodka Tequila Mezcal Whiskey Bourbon Rye Gin Rum Amaretto Cachaca]
+spirit_color = '#D4DADE'
+
+spirits.each do |spirit|
+  tags[normalize_key(spirit)] = Tag.find_or_create_by!(name: spirit, color: spirit_color)
+end
 
 # Misc
-absinthe = Tag.create!(
-  name: 'Absinthe',
-  color: '#B1F2B6' # light mint green, reflecting the herbal nature of absinthe
-)
-
-bitters = Tag.create!(
-  name: 'Bitters',
-  color: '#D35400' # dark orange, capturing the rich, complex bitterness
-)
+misc = {
+  'Absinthe' => '#B1F2B6',
+  'Bitters' => '#D5C5BA'
+}
+misc.each do |name, color|
+  tags[normalize_key(name)] = Tag.create!(name: name, color: color)
+end
 
 # Tasting notes
-balanced = Tag.create!(
-  name: 'Balanced',
-  color: '#F6DDCC'
-)
-spirit_forward = Tag.create!(
-  name: 'Spirit Forward',
-  color: '#DFB662'
-)
-tart = Tag.create!(
-  name: 'Tart',
-  color: '#D6F660'
-)
-sweet = Tag.create!(
-  name: 'Sweet',
-  color: '#F1948A'
-)
-sour = Tag.create!(
-  name: 'Sour',
-  color: '#BDEA61'
-)
-refreshing = Tag.create!(
-  name: 'Refreshing',
-  color: '#A3E4D7'
-)
-fruity = Tag.create!(
-  name: 'Fruity',
-  color: '#FFAA99'
-)
-savory = Tag.create!(
-  name: 'Savory',
-  color: "#E5E7E9"
-)
+tasting_notes = {
+  'Balanced' => '#F6DDCC',
+  'Spirit Forward' => '#DFB662',
+  'Tart' => '#D6F660',
+  'Sweet' => '#F1948A',
+  'Sour' => '#BDEA61',
+  'Refreshing' => '#A3E4D7',
+  'Fruity' => '#FFAA99',
+  'Savory' => '#B6A58B'
+}
+tasting_notes.each do |name, color|
+  tags[normalize_key(name)] = Tag.create!(name: name, color: color)
+end
 
 # Citrus
-lemon = Tag.create!(
-  name: 'Lemon',
-  color: '#F7DC6F'
-)
-lime = Tag.create!(
-  name: 'Lime',
-  color: '#7DCEA0'
-)
-orange = Tag.create!(
-  name: 'Orange',
-  color: '#FFA143'
-)
+citrus = {
+  'Lemon' => '#F7DC6F',
+  'Lime' => '#7DCEA0',
+  'Orange' => '#FFA143'
+}
+citrus.each do |name, color|
+  tags[normalize_key(name)] = Tag.create!(name: name, color: color)
+end
 
 # Flavors
-peach = Tag.create!(
-  name: 'Peach',
-  color: '#FFC478'
-)
+flavors = {
+  'Peach' => '#FFC478',
+  'Raspberry' => '#F3B3C2',
+  'Cranberry' => '#F3C3C9',
+  'Grapefruit' => '#F8C471',
+  'Cherry' => '#F9B5B5',
+  'Nutty' => '#D5A253',
+  'Cinnamon' => '#E6C1A1'
+}
+flavors.each do |name, color|
+  tags[normalize_key(name)] = Tag.create!(name: name, color: color)
+end
 
-raspberry = Tag.create!(
-  name: 'Raspberry',
-  color: '#E74C3C'
-)
-
-cranberry = Tag.create!(
-  name: 'Cranberry',
-  color: '#C0392B'
-)
-
-grapefruit = Tag.create!(
-  name: 'Grapefruit',
-  color: '#F8C471'
-)
-
-cherry = Tag.create!(
-  name: 'Cherry',
-  color: '#B03A2E'
-)
-
-# Misc
-mint = Tag.create!(
-  name: 'Mint',
-  color: '#98FB98'
-)
-
-basil = Tag.create!(
-  name: 'Basil',
-  color: '#7DCEA0'
-)
-
-nutty = Tag.create!(
-  name: 'Nutty',
-  color: '#D5A253'
-)
-
-cinnamon = Tag.create!(
-  name: 'Cinnamon',
-  color: '#A04000'
-)
+# Herbs
+herbs = {
+  'Mint' => '#98FB98',
+  'Basil' => '#7DCEA0'
+}
+herbs.each do |name, color|
+  tags[normalize_key(name)] = Tag.create!(name: name, color: color)
+end
 
 # Texture
-frothy = Tag.create!(
-  name: 'Frothy',
-  color: '#A9CCE3'
-)
+textures = {
+  'Frothy' => '#A9CCE3'
+}
+textures.each do |name, color|
+  tags[normalize_key(name)] = Tag.create!(name: name, color: color)
+end
 
 ## COCKTAIL RECIPES ##
 black_widow = Recipe.create!(
@@ -185,7 +117,7 @@ black_widow = Recipe.create!(
     Garnish with a dried lemon wheel
   HEREDOC
 )
-black_widow.tags << [ tequila, tart, lemon ]
+recipe_tags(black_widow, %w[tequila tart lemon], tags)
 
 princess_peach = Recipe.create!(
   name: 'Princess Peach',
@@ -204,7 +136,7 @@ princess_peach = Recipe.create!(
     Garnish with an orange wheel half
   HEREDOC
 )
-princess_peach.tags << [ vodka, sweet, lemon, peach ]
+recipe_tags(princess_peach, %w[vodka sweet lemon peach], tags)
 
 green_tea_shot = Recipe.create!(
   name: 'Green Tea Shot',
@@ -218,7 +150,7 @@ green_tea_shot = Recipe.create!(
     Shake & Strain into a shot glass
   HEREDOC
 )
-green_tea_shot.tags << [ whiskey, sour, lemon, lime, peach ]
+recipe_tags(green_tea_shot, %w[whiskey sour lemon lime peach], tags)
 
 sweet_baby_k = Recipe.create!(
   name: 'Sweet Baby K',
@@ -235,7 +167,7 @@ sweet_baby_k = Recipe.create!(
     Garnish with a lime
   HEREDOC
 )
-sweet_baby_k.tags << [ whiskey, sweet, lemon, mint ]
+recipe_tags(sweet_baby_k, %w[whiskey sweet lemon mint], tags)
 
 lemon_drop_martini = Recipe.create!(
   name: 'Lemon Drop Martini',
@@ -251,7 +183,7 @@ lemon_drop_martini = Recipe.create!(
     Garnish with a lemon wheel
   HEREDOC
 )
-lemon_drop_martini.tags << [ vodka, tart, lemon ]
+recipe_tags(lemon_drop_martini, %w[vodka tart lemon], tags)
 
 margarita = Recipe.create!(
   name: 'Margarita',
@@ -268,7 +200,7 @@ margarita = Recipe.create!(
     Garnish with lime wedge
   HEREDOC
 )
-margarita.tags << [ tequila, sour, lime ]
+recipe_tags(margarita, %w[tequila sour lime], tags)
 
 smoked_old_fashioned = Recipe.create!(
   name: 'Smoked Old Fashioned',
@@ -284,7 +216,7 @@ smoked_old_fashioned = Recipe.create!(
     Garnish with an orange twist, cherry, and bitters
   HEREDOC
 )
-smoked_old_fashioned.tags << [ bourbon, spirit_forward, orange ]
+recipe_tags(smoked_old_fashioned, %w[bourbon spirit_forward orange], tags)
 
 caipirinha = Recipe.create!(
   name: 'Caipirinha',
@@ -300,7 +232,7 @@ caipirinha = Recipe.create!(
     Top with ice and stir
   HEREDOC
 )
-caipirinha.tags << [ cachaca, balanced, lime, refreshing ]
+recipe_tags(caipirinha, %w[cachaca balanced lime refreshing], tags)
 
 ginger_basil_smash = Recipe.create!(
   name: 'Ginger Basil Smash',
@@ -317,7 +249,7 @@ ginger_basil_smash = Recipe.create!(
     Top with club soda
   HEREDOC
 )
-ginger_basil_smash.tags << [ bourbon, balanced, lemon, basil ]
+recipe_tags(ginger_basil_smash, %w[bourbon balanced lemon basil], tags)
 
 oaxacan_old_fashion = Recipe.create!(
   name: 'Oaxacan Old Fashion',
@@ -335,10 +267,10 @@ oaxacan_old_fashion = Recipe.create!(
     Garnish with an orange twist & bitters
   HEREDOC
 )
-oaxacan_old_fashion.tags << [ tequila, mezcal, spirit_forward, orange ]
+recipe_tags(oaxacan_old_fashion, %w[tequila mezcal spirit_forward orange], tags)
 
 joshs_jam = Recipe.create!(
-  name: 'Josh\'s Jam',
+  name: "Josh's Jam",
   recipe_type: :cocktail,
   ingredients: [
     "1.5oz Gin",
@@ -351,7 +283,7 @@ joshs_jam = Recipe.create!(
     Garnish with a raspberry or lemon twist
   HEREDOC
 )
-joshs_jam.tags << [ gin, sweet, balanced, fruity, orange, raspberry ]
+recipe_tags(joshs_jam, %w[gin sweet balanced fruity orange raspberry], tags)
 
 ku_clover = Recipe.create!(
   name: 'K.U. Clover',
@@ -369,7 +301,7 @@ ku_clover = Recipe.create!(
     Garnish with a raspberry or lemon twist
   HEREDOC
 )
-ku_clover.tags << [ gin, balanced, lemon, raspberry, frothy ]
+recipe_tags(ku_clover, %w[gin balanced lemon raspberry frothy], tags)
 
 paloma = Recipe.create!(
   name: 'Paloma',
@@ -386,7 +318,7 @@ paloma = Recipe.create!(
     Top with club soda
   HEREDOC
 )
-paloma.tags << [ tequila, balanced, refreshing, lime, grapefruit ]
+recipe_tags(paloma, %w[tequila balanced refreshing lime grapefruit], tags)
 
 sarah_smile = Recipe.create!(
   name: 'Sarah Smile',
@@ -402,7 +334,7 @@ sarah_smile = Recipe.create!(
     Garnish with an orange twist and bitters
   HEREDOC
 )
-sarah_smile.tags << [ bourbon, spirit_forward, orange, cinnamon ]
+recipe_tags(sarah_smile, %w[bourbon spirit_forward orange cinnamon], tags)
 
 sazerac = Recipe.create!(
   name: 'Sazerac',
@@ -419,7 +351,7 @@ sazerac = Recipe.create!(
     Garnish with a lemon twist
   HEREDOC
 )
-sazerac.tags << [ rye, spirit_forward, bitters, absinthe ]
+recipe_tags(sazerac, %w[rye spirit_forward bitters absinthe], tags)
 
 whiskey_sour = Recipe.create!(
   name: 'Whiskey Sour',
@@ -436,7 +368,7 @@ whiskey_sour = Recipe.create!(
     Garnish with a cherry and lemon slice
   HEREDOC
 )
-whiskey_sour.tags << [ bourbon, sour, lemon, cherry ]
+recipe_tags(whiskey_sour, %w[bourbon sour lemon cherry], tags)
 
 amaretto_sour = Recipe.create!(
   name: 'Amaretto Sour',
@@ -450,7 +382,7 @@ amaretto_sour = Recipe.create!(
     Garnish with a cherry
   HEREDOC
 )
-amaretto_sour.tags << [ amaretto, sweet, lemon, lime, nutty ]
+recipe_tags(amaretto_sour, %w[amaretto sweet lemon lime nutty], tags)
 
 bloody_mary = Recipe.create!(
   name: 'Bloody Mary',
@@ -465,7 +397,7 @@ bloody_mary = Recipe.create!(
     Garnish with 2 olives and a lime wedge
   HEREDOC
 )
-bloody_mary.tags << [ vodka, savory ] # Add tomato
+recipe_tags(bloody_mary, %w[vodka savory lime], tags)
 
 cosmopolitan = Recipe.create!(
   name: 'Cosmopolitan',
@@ -481,4 +413,4 @@ cosmopolitan = Recipe.create!(
     Garnish with an orange twist
   HEREDOC
 )
-cosmopolitan.tags << [ vodka, sweet, lime, cranberry ]
+recipe_tags(cosmopolitan, %w[vodka sweet lime cranberry], tags)

@@ -9,6 +9,13 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
+$bg-color: #dddddd;
+$soft-white: #ececec;
+$btn-bg: #e6e6e6;
+$light-border: #b4b4b4;
+$dark-border: #555555;
+$red: #c21700;
+$shadow-color: rgba(0, 0, 0, 0.15);
 
 // Aditional stuff from rails-demos-and-deets-2023
 // Custom bootstrap variables must be set or imported *before* bootstrap.
@@ -18,8 +25,11 @@
 label.required:after {
   content:" *";
 }
+body {
+  background-color: $bg-color;
+}
 
-// SCREEN MARGIN CUSTOMIZATION
+// ========= Margins ========= //
 // Default for extra small screens (phones)
 .container {
   max-width: 100%;
@@ -43,79 +53,85 @@ label.required:after {
   }
 }
 
-main {
-  margin-top: 1rem;
+// ========= Navbar ========= //
+.navbar{
+  background-color: $bg-color !important;
 }
 
-// Nav Bar
-.btn-nav {
+.nav-btn {
   @extend .btn;
   transition: transform 0.2s ease;
-  border-color: #575757;
+  background-color: $btn-bg;
+  border-color: $light-border;
   font-size: 18px;
-  padding: 0.25rem 0.5rem;
-}
-.btn-nav:hover {
-  transform: scale(1.05);
-  background-color: #dddddd;
-  border-color: #242424;
+  padding: 0.25rem 0.75rem;
+  box-shadow: 1px 1.5px 4px 0.5px $shadow-color;
+
+  &:hover {
+    transform: scale(1.05);
+    border-color: $dark-border;
+  }
 }
 
-// Home page
-.card-btn {
-  transition: transform 0.2s ease;
-  text-decoration: none;
-  border-color: #cccccc;
-}
-.card-btn:hover {
-  transition: transform 0.1s ease;
-  transform: scale(1.05);
-  border-color: #242424;
-}
-.card-btn .card {
-  transition: inherit;
-  border-color: inherit;
-}
-.card-btn:hover .card {
-  transform: inherit;
-  border-color: inherit;
+.search{
+  @extend .form-control;
+  box-shadow: 1px 1.5px 4px 0.5px $shadow-color; 
 }
 
-// Index page
-// Cards
-.card {
-  transition: transform 0.2s ease;
-}
-.card:hover {
-  transform: scale(1.015);
-  border-color: #242424;
-}
-
-// Tags
+// ====== Tags Buttons ====== //
 .btn-tag {
   @extend .btn;
   transition: transform 0.1s ease;
   font-size: .75rem;
   padding: .05rem .4rem;
-  margin-left: -0.35rem;
-  margin-right: .4rem;
-  margin-bottom: .5rem;
-}
-.btn-tag:hover {
-  transform: scale(1.15);
+  margin-bottom: .75rem;
+  box-shadow: 0.5px 1px 2px 1px $shadow-color;
+  
+  &:hover {
+    transform: scale(1.15);
+  }
 }
 
-// Navbar Filter Button Tags
-.btn-filter {
+.nav-btn-tag {
   @extend .btn;
   transition: transform 0.2s ease;
   font-size: 16px;
   padding: 0.25rem 0.5rem;
   margin-right: 0.25rem;
+  box-shadow: 0.5px 1px 3px 1px $shadow-color; 
+
+  &:hover {
+    transform: scale(0.925);
+    color: $red;
+    border-color: $red !important; 
+    background-color: $bg-color !important;
+  }
 }
-.btn-filter:hover {
-  transform: scale(0.9);
-  color: #c21700 !important;
-  border-color: #c21700 !important; 
-  border-width: 1px !important;
+
+// ==== Home Page Cards ==== //
+.card-btn {
+  text-decoration: none;
+
+  &:hover .card {
+    transform: scale(1.05);
+    border-color: $dark-border;
+  }
+}
+
+.card-btn .card {
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  border-color: $light-border;
+}
+
+// ====== Recipe Cards ====== //
+.recipe-card {
+  @extend .card;
+  transition: transform 0.2s ease;
+  background-color: $soft-white !important;
+  border-color: $light-border;
+
+  &:hover {
+    transform: scale(1.015);
+    border-color: $dark-border;
+  }
 }
