@@ -19,8 +19,8 @@
 ### Additional Gems
 
 * pgreset
-* Annotate
+* annotate
 * bootstrap 5.3.3
 * bootswatch 5.3.3
 * bootstrap_form 5.4.0
-* sass
+* dartsass-sprockets 3.0
