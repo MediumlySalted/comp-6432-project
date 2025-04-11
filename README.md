@@ -5,8 +5,9 @@
 
 ### To-do
 
+* Add push/pop functionality
 * Add button and search functionality
-* Add syrup recipes
+* Add cocktail ingredient recipes
 * Add food recipes
 
 ### Versions
