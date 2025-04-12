@@ -14,15 +14,6 @@
         <li class="nav-item ms-1 me-1"><%= link_to "Food", home_path, class: "nav-btn" %></li>
         <li class="nav-item ms-1 me-1"><%= link_to "Cocktails", recipes_path, class: "nav-btn" %></li>
       </ul>
-    <!-- Tags -->
-      <ul class="nav-filters navbar-nav me-auto">
-      <% if @tags %>
-      <span class="navbar-text ms-1 me-1">Filtering by: </span>
-        <% @tags.each do | tag | %>
-          <li class="nav-item align-content-center"><%= link_to "#{tag.name}", "#{recipes_path(toggle_tag_in_params(tag.id))}", class: "nav-btn-tag ms-1 me-1", style: "background-color: #{tag.color}; border-color: #{tag.color}" %></li>
-        <% end %>
-      <% end %>
-      </ul>
     <!-- Search Bar & Btns -->
       <div class="d-flex ms-5 me-5 justify-content-end">
         <%= form_with url: recipes_path, method: :get, class: "d-flex" do %>
@@ -56,57 +47,46 @@
   </div>
 </nav>
 
-<br>
+<h1><%= @user.email %>'s Profile</h1>
+
+<h2>Your Recipes</h2>
+<%= link_to 'New Recipe', new_recipe_path, class: 'btn btn-primary' %>
+
 
 <!-- Recipes -->
 <div class="container">
   <div class="row row-cols-auto justify-content-center">
   <% @recipes.each do | recipe | %>
     <div class="col mb-4">
-      <div class="recipe-card shadow p-4 bg-body rounded h-100 w-100">
-        <% if recipe.creator %>
-          <div class="label position-absolute top-0 end-0 m-2">
-            Created by: <%= recipe.creator.email.split('@').first.titleize %>
-          </div>
-        <% end %>
-        <div class="card-body">
-          <h2 class="card-title" style="margin-bottom: .25rem;"><%= recipe.name %></h2>
-          <!-- Tags -->
-          <div>
-          <% recipe.tags.each do | tag | %>
-            <%= link_to "#{tag.name}", "#{recipes_path(toggle_tag_in_params(tag.id))}", class: "btn-tag", style: "background-color: #{tag.color}; border-color: #{tag.color}" %>
-          <% end %>
-          </div>
-          <!-- Ingredients -->
-          <h5 class="card-text">Ingredients</h5>
-          <ul>
-            <% recipe.ingredients.each do | ingredient | %>
-              <li><p class="card-text"><%= ingredient %></p></li>
-            <% end %>
-          </ul>
-          <!-- Directions -->
-          <h5 class="card-text">Directions</h5>
-          <div>
-            <% directions = recipe.directions.split("\n") %>
-            <% directions.each do | direction | %>
-              <p class="card-text" style="margin: 0; padding: 0;"><%= direction %></p>
-            <% end %>
+      <%= link_to edit_recipe_path(recipe), class: 'edit-card-btn' do %>
+        <div class="card shadow p-4 bg-body rounded h-100 w-100">
+          <div class="card-body">
+            <div class="label position-absolute top-0 end-0 m-2">Edit</div>
+            <h2 class="card-title" style="margin-bottom: .25rem;"><%= recipe.name %></h2>
+            <!-- Tags -->
+              <% recipe.tags.each do | tag | %>
+                <div class="tag" style="background-color: <%= tag.color %>; border-color: <%= tag.color %>"><%= tag.name %></div>
+              <% end %>
+            <!-- Ingredients -->
+              <h5 class="card-text">Ingredients</h5>
+              <ul>
+                  <% recipe.ingredients.each do | ingredient | %>
+                  <li><p class="card-text"><%= ingredient %></p></li>
+                  <% end %>
+              </ul>
+            <!-- Directions -->
+              <h5 class="card-text">Directions</h5>
+              <div>
+                  <% directions = recipe.directions.split("\n") %>
+                  <% directions.each do | direction | %>
+                  <p class="card-text" style="margin: 0; padding: 0;"><%= direction %></p>
+                  <% end %>
+              </div>
+
           </div>
         </div>
-      </div>
+      <% end %>
     </div>
   <% end %>
   </div>
 </div>
-
-<script>
-
-  function updateFilter(text, value) {
-    let filterButton = document.getElementById("filterButton");
-    let filterInput = document.getElementById("filterBy");
-
-    filterButton.textContent = text;
-    filterInput.value = value;
-  }
-
-</script>

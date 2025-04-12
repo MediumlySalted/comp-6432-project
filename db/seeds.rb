@@ -22,7 +22,7 @@ def normalize_key(name)
 end
 
 # Users
-User.create!(
+admin = User.create!(
   email: 'admin@email.com',
   password: '123admin321!'
 )
@@ -106,6 +106,7 @@ end
 ## COCKTAIL RECIPES ##
 black_widow = Recipe.create!(
   name: 'Black Widow',
+  creator: admin,
   recipe_type: :cocktail,
   ingredients: [
     "1.5oz Tequila",
@@ -121,6 +122,7 @@ recipe_tags(black_widow, %w[tequila tart lemon], tags)
 
 princess_peach = Recipe.create!(
   name: 'Princess Peach',
+  creator: admin,
   recipe_type: :cocktail,
   ingredients: [
     "2oz Peach & Orange Blossom Vodka",
@@ -154,6 +156,7 @@ recipe_tags(green_tea_shot, %w[whiskey sour lemon lime peach], tags)
 
 sweet_baby_k = Recipe.create!(
   name: 'Sweet Baby K',
+  creator: admin,
   recipe_type: :cocktail,
   ingredients: [
     "1.5oz Peach Bourbon",

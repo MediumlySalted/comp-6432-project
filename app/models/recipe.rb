@@ -9,9 +9,22 @@
 #  directions  :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  user_id     :integer
+#
+# Indexes
+#
+#  index_recipes_on_user_id  (user_id)
 #
 
 class Recipe < ApplicationRecord
+  belongs_to(
+    :creator,
+    class_name: "User",
+    foreign_key: "user_id",
+    inverse_of: :recipes,
+    optional: :true
+  )
+
   has_many(
     :recipe_tags,
     class_name: "RecipeTag",
@@ -22,10 +35,8 @@ class Recipe < ApplicationRecord
 
   has_many :tags, through: :recipe_tags
 
-  enum :recipe_type, [ :food, :cocktail, :food_ingredient, :cocktail_ingredient ]
-
   validates :name, presence: true
-  validates :recipe_type, inclusion: { in: recipe_types }
+  validates :recipe_type, presence: true
   validates :ingredients, presence: true
   validates :directions, presence: true
 

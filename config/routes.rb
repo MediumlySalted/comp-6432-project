@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   get "/home/food", to: "pages#food", as: "food"
   get "/home/cocktails", to: "pages#cocktails", as: "cocktails"
 
-  resources :recipes, only: [ :index ]
+  resources :recipes
+  resources :users, only: [ :show ]
 end
