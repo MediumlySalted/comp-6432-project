@@ -9,6 +9,7 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
+// ===== Colors n stuff ===== //
 $bg-color: #dddddd;
 $soft-white: #ececec;
 $btn-bg: #e6e6e6;
@@ -26,6 +27,7 @@ $shadow-color: rgba(0, 0, 0, 0.15);
 label.required:after {
   content:" *";
 }
+
 body {
   background-color: $bg-color;
 }
@@ -113,7 +115,7 @@ body {
   }
 }
 
-// ==== Cards ==== //
+// ========== Cards ========== //
 .card-btn {
   text-decoration: none;
 
