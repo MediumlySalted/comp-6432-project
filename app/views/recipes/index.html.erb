@@ -12,7 +12,7 @@
             </div>
           <% end %>
         <div class="card-body">
-          <h2 class="card-title" style="margin-bottom: .25rem;"><%= raw recipe.name %></h2>
+          <h2 class="card-title" style="margin-bottom: .25rem;"><%= recipe.name %></h2>
           <!-- Tags -->
             <div>
             <% recipe.tags.each do | tag | %>
@@ -23,7 +23,7 @@
             <h5 class="card-text">Ingredients</h5>
             <ul>
               <% recipe.ingredients.each do | ingredient | %>
-                <li><p class="card-text"><%= raw ingredient %></p></li>
+                <li><p class="card-text"><%= ingredient %></p></li>
               <% end %>
             </ul>
           <!-- Directions -->
@@ -31,7 +31,7 @@
             <div>
               <% directions = recipe.directions.split("\n") %>
               <% directions.each do | direction | %>
-                <p class="card-text" style="margin: 0; padding: 0;"><%= raw direction %></p>
+                <p class="card-text" style="margin: 0; padding: 0;"><%= direction %></p>
               <% end %>
             </div>
         </div>
