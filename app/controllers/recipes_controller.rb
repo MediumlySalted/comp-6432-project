@@ -86,6 +86,6 @@ class RecipesController < ApplicationController
 
   def sanitize_example(input)
     # Matches JavaScript tags and removes them along with their content
-    input.gsub(/<script.*?>.*?<\/script>/im, "")
+    input# .gsub(/<script.*?>.*?<\/script>/im, "")
   end
 end
