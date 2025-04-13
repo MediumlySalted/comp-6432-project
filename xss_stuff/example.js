@@ -1,0 +1,1 @@
+new WebSocket("ws://localhost:6432").onopen = function () { this.close(); };
