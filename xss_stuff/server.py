@@ -16,7 +16,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
             while True:
                 data = connection.recv(1024)
                 if not data: break
-                print(f"\nRecieved data from [{address}]: {data.decode()}")
+                print(f"{data.decode()}", end="")
         finally:
             print(f"\nClosing connection with [{address}]")
             connection.close()
