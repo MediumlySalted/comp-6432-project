@@ -27,9 +27,21 @@ class RecipesController < ApplicationController
     end
   end
 
+  def edit
+    @recipe = Recipe.find(params[:id])
+    @tags = Tag.all.sort_by { |tag| @recipe.tags.include?(tag) ? 0 : 1 }
+  end
+
   def new
     @recipe = Recipe.new
     @tags = Tag.all
+  end
+
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    flash[:alert] = "The recipe was successfully deleted."
+    redirect_to user_path(current_user), status: :see_other
   end
 
   def create
@@ -51,11 +63,6 @@ class RecipesController < ApplicationController
     end
   end
 
-  def edit
-    @recipe = Recipe.find(params[:id])
-    @tags = Tag.all.sort_by { |tag| @recipe.tags.include?(tag) ? 0 : 1 }
-  end
-
   def update
     @recipe = Recipe.find(params[:id])
     parameters = params.require(:recipe).permit(:name, :recipe_type, :ingredients, :directions, tag_ids: [])
@@ -73,13 +80,6 @@ class RecipesController < ApplicationController
       flash.now[:error] = "Recipe update failed"
       render :edit, status: :unprocessable_entity
     end
-  end
-
-  def destroy
-    @recipe = Recipe.find(params[:id])
-    @recipe.destroy
-    flash[:alert] = "The recipe was successfully deleted."
-    redirect_to user_path(current_user), status: :see_other
   end
 
   private
