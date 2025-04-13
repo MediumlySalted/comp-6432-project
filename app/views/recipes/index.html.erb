@@ -1,63 +1,4 @@
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-body">
-  <div class="container-fluid">
-  <!-- Home Button -->
-    <%= link_to "Home", home_path, class: "navbar-brand ms-3 me-3"%>
-  <!-- Collapsable -->
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse">
-    <!-- Navigation Buttons -->
-      <ul class="navbar-nav ms-3 me-5">
-        <li class="nav-item ms-1 me-1"><%= link_to "Food", home_path, class: "nav-btn" %></li>
-        <li class="nav-item ms-1 me-1"><%= link_to "Cocktails", recipes_path, class: "nav-btn" %></li>
-      </ul>
-    <!-- Tags -->
-      <ul class="nav-filters navbar-nav me-auto">
-      <% if @tags %>
-      <span class="navbar-text ms-1 me-1">Filtering by: </span>
-        <% @tags.each do | tag | %>
-          <li class="nav-item align-content-center"><%= link_to "#{tag.name}", "#{recipes_path(toggle_tag_in_params(tag.id))}", class: "nav-btn-tag ms-1 me-1", style: "background-color: #{tag.color}; border-color: #{tag.color}" %></li>
-        <% end %>
-      <% end %>
-      </ul>
-    <!-- Search Bar & Btns -->
-      <div class="d-flex ms-5 me-5 justify-content-end">
-        <%= form_with url: recipes_path, method: :get, class: "d-flex" do %>
-        <!-- Filter Button -->
-          <div class="btn-group dropdown">
-            <%= button_tag "Search by:", id: "filterButton", class: "nav-btn dropdown-toggle ms-1 me-1", type: "button", data: { bs_toggle: "dropdown" } %>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Name", "#", class: "dropdown-item", onclick: "updateFilter('Name', 'recipe.name')" %></li>
-              <li><%= link_to "Tag", "#", class: "dropdown-item", onclick: "updateFilter('Tag', 'tag.name')" %></li>
-              <li><%= link_to "Ingredient", "#", class: "dropdown-item", onclick: "updateFilter('Ingredients', 'recipe.ingredients')" %></li>
-            </ul>
-            <%= hidden_field_tag :filter, "", id: "filterBy" %>
-          </div>
-        <!-- Search Bar & Buttons -->
-          <input class="search ms-1 me-1" type="search" placeholder="Search" aria-label="Search">
-          <button class="nav-btn ms-1 me-1">Search</button>
-          <%= link_to "Reset", recipes_path, class: "nav-btn ms-1 me-1", type: "button" %>
-        <% end %>
-      </div>
-    </div>
-  <!-- Sign in/out -->
-    <ul class="navbar-nav me-4">
-    <% if user_signed_in? %>
-      <li class="nav-item"><%= link_to "Profile", user_path(current_user), class: "nav-link #{active_class(edit_user_registration_path)} btn btn-link" %></li>
-      <li class="nav-item"><%= button_to 'Sign Out', destroy_user_session_path, method: :delete, data: { turbo: false }, class: 'nav-link btn btn-link' %></li>
-    <% else %>
-      <li class="nav-item"><%= link_to 'Sign In', new_user_session_path, class: "nav-link #{active_class(new_user_session_path)} btn btn-link" %></li>
-      <li class="nav-item"><%= link_to 'Sign Up', new_user_registration_path, class: "nav-link #{active_class(new_user_registration_path)} btn btn-link" %></li>
-    <% end %>
-    </ul>
-  </div>
-</nav>
-
-<br>
-
 <!-- Recipes -->
 <div class="container">
   <div class="row row-cols-auto justify-content-center">
@@ -101,13 +42,13 @@
 </div>
 
 <script>
+  // Changes the text in the filter button to match it's value
+  function updateFilter(input) {
+    let filterButton = document.getElementById("filterButton")
+    let filterInput = document.getElementById("filterBy")
 
-  function updateFilter(text, value) {
-    let filterButton = document.getElementById("filterButton");
-    let filterInput = document.getElementById("filterBy");
-
-    filterButton.textContent = text;
-    filterInput.value = value;
+    filterButton.textContent = input
+    filterInput.value = input
   }
 
 </script>

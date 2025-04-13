@@ -11,12 +11,8 @@
 
 // ===== Colors n stuff ===== //
 $bg-color: #dddddd;
-$soft-white: #ececec;
-$btn-bg: #e6e6e6;
 $light-border: #b4b4b4;
-$dark-border: #555555;
-$blue: #1d59b3;
-$red: #c21700;
+$dark-border: #777373;
 $shadow-color: rgba(0, 0, 0, 0.15);
 
 // Aditional stuff from rails-demos-and-deets-2023
@@ -30,6 +26,14 @@ label.required:after {
 
 body {
   background-color: $bg-color;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.flash-container {
+  width: max-content;
+  max-width: 90vw;
+  z-index: 1055;
 }
 
 // ========= Margins ========= //
@@ -58,13 +62,20 @@ body {
 
 // ========= Navbar ========= //
 .navbar{
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  margin-left: calc(100vw - 100%);
+  margin-right: calc(100vw - 100%);
+  padding: 10px 0px;
   background-color: $bg-color !important;
+  border-bottom: 1px solid $light-border !important;
 }
 
 .nav-btn {
   @extend .btn;
   transition: transform 0.2s ease;
-  background-color: $btn-bg;
+  background-color: $gray-300;
   border-color: $light-border;
   font-size: 18px;
   padding: 0.25rem 0.75rem;
@@ -76,9 +87,57 @@ body {
   }
 }
 
+.nav-reset-btn {
+  @extend .nav-btn;
+  color: $red-500;
+  border-color: $red-500;
+
+  &:hover {
+    color: $red-600;
+    border-color: $red-600;
+  }
+}
+
+.nav-search-btn {
+  @extend .nav-btn;
+  color: $green-500;
+  border-color: $green-500;
+
+  &:hover {
+    color: $green-600;
+    border-color: $green-600;
+  }
+}
+
 .search{
   @extend .form-control;
-  box-shadow: 1px 1.5px 4px 0.5px $shadow-color; 
+  transition: transform 0.2s ease;
+  box-shadow: 1px 1.5px 4px 0.5px $shadow-color;
+  border-color: $light-border;
+
+  &:hover {
+    transform: scale(1.025);
+    border-color: $dark-border;
+  }
+}
+
+.nav-link {
+  transition: transform 0.2s ease;
+
+  &:hover {
+    color: $gray-900;
+    transform: scale(1.05);
+  }
+}
+
+.navbar-brand {
+  transition: transform 0.2s ease;
+  color: $gray-800;
+  
+  &:hover {
+    color: $black;
+    transform: scale(1.075);
+  }
 }
 
 // ====== Tags Buttons ====== //
@@ -88,13 +147,13 @@ body {
   font-size: .75rem;
   padding: .05rem .4rem;
   margin-bottom: .75rem;
-  box-shadow: 0.5px 1px 2px 1px $shadow-color;
+  box-shadow: 1.5px 1.75px 2px 1px $shadow-color;
 }
-
 .btn-tag {
   @extend .tag;
-
+  
   &:hover {
+    border-color: $dark-border !important;
     transform: scale(1.15);
   }
 }
@@ -109,8 +168,12 @@ body {
 
   &:hover {
     transform: scale(0.925);
-    color: $red;
-    border-color: $red !important; 
+    color: $red-500;
+    border-color: $red-500 !important; 
+    background-color: $bg-color !important;
+  }
+  &:active {
+    color: $red-600 !important;
     background-color: $bg-color !important;
   }
 }
@@ -133,17 +196,17 @@ body {
   @extend .card-btn;
 
   &:hover .card {
-    border-color: $blue;
+    border-color: $blue-600;
   }
   &:hover .label {
-    color: $blue
+    color: $blue-600
   }
 }
 
 .recipe-card {
   @extend .card;
   transition: transform 0.2s ease;
-  background-color: $soft-white !important;
+  background-color: $gray-200 !important;
   border-color: $light-border;
 
   &:hover {
@@ -160,4 +223,67 @@ body {
   font-size: 0.75rem;
   font-weight: 500;
   opacity: 0.65;
+}
+
+// ===== General Buttons ===== //
+.big-btn {
+  @extend .btn;
+  @extend .btn-lg;
+  color: $gray-800;
+  transition: transform 0.2s ease;
+  background-color: $gray-200;
+  border-color: $light-border;
+  box-shadow: 1px 1.5px 6px 2px $shadow-color;
+  
+  &:hover {
+    transform: scale(1.05);
+    background-color: $bg-color;
+    border-color: $dark-border;
+  }
+}
+
+.create-btn {
+  @extend .big-btn;
+  color: $gray-200;
+  background-color: $green-500;
+  
+  &:hover {
+    color: $gray-200;
+    background-color: darken($green-500, 4%);
+    border-color: $green-600;
+  }
+}
+
+.delete-btn {
+  @extend .big-btn;
+  color: $gray-200;
+  background-color: $red-500;
+  
+  &:hover {
+    color: $gray-200;
+    background-color: darken($red-500, 4%);
+    border-color: $red-600;
+  }
+}
+
+// ========== Forms ========== //
+.form-control {
+  border-color: $gray-400;
+  box-shadow: 1px 1px 6px 1px $shadow-color;
+
+  &:hover {
+    border-color: $dark-border;
+  }
+}
+
+.form-check-input {
+  transition: transform 0.15s ease;
+  border-color: $gray-400;
+  box-shadow: 1px 1px 2px 1px $shadow-color;
+  
+  &:hover {
+    color: $gray-900;
+    transform: scale(1.1);
+    border-color: $dark-border;
+  }
 }

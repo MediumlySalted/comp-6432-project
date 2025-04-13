@@ -10,21 +10,40 @@
 
     <%= yield :head %>
 
-    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
-    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
-
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <!-- Includes all stylesheet files in app/assets/stylesheets -->
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <main role="main" class="container-fluid">
-      <%= yield %>
-    </main>
+    <!-- Flash Messages  -->
+      <div class="flash-container position-fixed top-0 start-50 translate-middle-x mt-3">
+        <% flash.each do |type, message| %>
+          <% bootstrap_class = case type.to_sym
+            when :notice then "primary"
+            when :alert then "danger"
+            when :error then "danger"
+            when :success then "success"
+            when :warning then "warning"
+            when :info then "info"
+            else "primary"
+          end %>
+
+          <div class="alert alert-<%= bootstrap_class %> alert-dismissible fade show" role="alert">
+            <%= message %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        <% end %>
+      </div>
+
+    <!-- Main Layout -->
+      <main role="main" class="container-fluid">
+        <%= render partial: "layouts/navbar", locals: { tags: @tags } %>
+        <%= yield %>
+      </main>
   </body>
 </html>

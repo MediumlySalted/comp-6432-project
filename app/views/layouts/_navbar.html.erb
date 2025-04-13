@@ -1,0 +1,6 @@
+
+<% if controller_name == "recipes" && action_name == "index" %>
+  <%= render "layouts/navbar_with_filters", tags: tags %>
+<% else %>
+  <%= render "layouts/default_navbar" %>
+<% end %>

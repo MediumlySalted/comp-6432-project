@@ -3,13 +3,6 @@
 
 ## Developer Notes
 
-### To-do
-
-* Add push/pop functionality
-* Add button and search functionality
-* Add cocktail ingredient recipes
-* Add food recipes
-
 ### Versions
 
 * Ruby 3.3.6
