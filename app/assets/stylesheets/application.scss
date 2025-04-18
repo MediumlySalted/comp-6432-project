@@ -25,6 +25,11 @@ label.required:after {
 }
 
 body {
+  background: asset_url('background.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-blend-mode: color-burn;
   background-color: $bg-color;
   width: 100vw;
   overflow-x: hidden;
@@ -181,15 +186,17 @@ body {
 // ========== Cards ========== //
 .card-btn {
   text-decoration: none;
+  background-color: $gray-100 !important;
+
+  .card {
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    border-color: $light-border;
+  }
 
   &:hover .card {
     transform: scale(1.05);
     border-color: $dark-border;
   }
-}
-.card-btn .card {
-  transition: transform 0.2s ease, border-color 0.2s ease;
-  border-color: $light-border;
 }
 
 .edit-card-btn {
@@ -206,23 +213,24 @@ body {
 .recipe-card {
   @extend .card;
   transition: transform 0.2s ease;
-  background-color: $gray-200 !important;
+  background-color: $gray-100 !important;
   border-color: $light-border;
 
+  .label {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    opacity: 0.65;
+  }
+
   &:hover {
-    transform: scale(1.015);
+    transform: scale(1.025);
     border-color: $dark-border;
   }
 
   &:hover .label {
     opacity: 0.85;
   }
-}
-.recipe-card .label {
-  padding: 0.25rem 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  opacity: 0.65;
 }
 
 // ===== General Buttons ===== //
