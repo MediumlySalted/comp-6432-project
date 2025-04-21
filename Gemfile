@@ -70,7 +70,7 @@ gem "pgreset", group: %i[development test]
 gem "annotate", group: :development
 
 # Bootstrap
-gem "bootstrap", "~> 5.3.3"
+gem "bootstrap", "~> 5.3.5"
 gem "bootswatch", github: "thomaspark/bootswatch", tag: "v5.3.3"
 gem "bootstrap_form", "~> 5.4.0"
 gem "dartsass-sprockets", "~> 3.0"
